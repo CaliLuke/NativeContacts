@@ -1,0 +1,163 @@
+{
+    "id": "ExtBox1-ext-gen6063",
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "contactInfo",
+        "padding": "10px",
+        "designer|userClassName": "contactInfo"
+    },
+    "customConfigs": [],
+    "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
+    "$viewOrder": 1,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen8444",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "designer|userClassName": "MyToolbar"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen6787",
+                    "type": "component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "html": "First Name Last Name",
+                        "id": "nameBack",
+                        "designer|userClassName": "MyComponent",
+                        "layout|flex": 3
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen8261",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "starContact",
+                        "iconCls": "favorites",
+                        "iconMask": true,
+                        "text": "",
+                        "designer|userClassName": "MyButton"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen20878",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "editContact",
+                        "iconCls": "compose",
+                        "iconMask": true,
+                        "text": "",
+                        "designer|userClassName": "MyButton"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen6728",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {},
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen15697"
+        },
+        {
+            "id": "ExtBox1-ext-gen19570",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "emailAddress",
+                "clearIcon": false,
+                "label": "Email Address",
+                "labelAlign": "top",
+                "readOnly": true,
+                "designer|userClassName": "MyTextField1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19671",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "phoneNumber",
+                "clearIcon": false,
+                "label": "Phone Number",
+                "labelAlign": "top",
+                "readOnly": true,
+                "designer|userClassName": "MyTextField1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16046",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "address",
+                "itemId": null,
+                "clearIcon": false,
+                "label": "Address",
+                "labelAlign": "top",
+                "readOnly": true,
+                "designer|userClassName": "MyTextField1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "id": "ExtBox1-ext-gen15697",
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 100,
+        "html": null,
+        "id": "contactPicture",
+        "minHeight": 100,
+        "style": "overflow: hidden",
+        "ui": "",
+        "layout": "vbox",
+        "masked": null,
+        "modal": null,
+        "scrollable": null,
+        "designer|userClassName": "contactPicture",
+        "designer|userAlias": "mycontainer3",
+        "container|align": "end",
+        "container|pack": "end",
+        "overflow": "hidden"
+    },
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "overflow",
+            "type": "string"
+        }
+    ],
+    "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
+    "$viewOrder": 3,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4635",
+            "type": "component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<img src=\"\">",
+                "style": "background-image:url('http://www.miltonblack.com.au/images/Star%20Club/man.jpg')",
+                "designer|userClassName": "MyComponent2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16421",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "id": "pictureButton",
+                "width": null,
+                "iconCls": "add",
+                "iconMask": true,
+                "text": "",
+                "designer|userClassName": "MyButton1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
