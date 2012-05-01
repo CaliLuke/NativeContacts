@@ -59,6 +59,7 @@ Ext.define('MyApp.view.MyTabPanel', {
             }
         ],
         tabBar: {
+            border: '',
             docked: 'top',
             layout: {
                 pack: 'center',

@@ -13,7 +13,7 @@
     "customConfigs": [],
     "designerId": "ab0ebc18-fc5b-43b1-8958-7395bd191769",
     "$viewOrder": 0,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen2091",
@@ -124,6 +124,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "border": "",
                 "docked": "top",
                 "designer|userClassName": "MyTabBar",
                 "container|pack": "center"

@@ -18,29 +18,29 @@ Ext.define('MyApp.view.contactPicture', {
     alias: 'widget.mycontainer3',
 
     config: {
-        height: 100,
+        height: 120,
+        html: '<img src="images/contact.jpeg">',
         id: 'contactPicture',
         minHeight: 100,
         style: 'overflow: hidden',
         ui: '',
         layout: {
-            align: 'end',
-            pack: 'end',
+            align: 'center',
             type: 'vbox'
         },
         overflow: 'hidden',
         items: [
             {
                 xtype: 'component',
-                html: '<img src="">',
-                style: 'background-image:url(\'http://www.miltonblack.com.au/images/Star%20Club/man.jpg\')'
+                html: ''
             },
             {
                 xtype: 'button',
+                bottom: 5,
                 id: 'pictureButton',
+                right: 5,
                 iconCls: 'add',
-                iconMask: true,
-                text: ''
+                iconMask: true
             }
         ]
     }

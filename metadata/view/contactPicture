@@ -7,8 +7,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 100,
-        "html": null,
+        "height": 120,
+        "html": "<img src=\"images/contact.jpeg\">",
         "id": "contactPicture",
         "minHeight": 100,
         "style": "overflow: hidden",
@@ -19,9 +19,8 @@
         "scrollable": null,
         "designer|userClassName": "contactPicture",
         "designer|userAlias": "mycontainer3",
-        "container|align": "end",
-        "container|pack": "end",
-        "overflow": "hidden"
+        "overflow": "hidden",
+        "container|align": "center"
     },
     "customConfigs": [
         {
@@ -32,7 +31,7 @@
     ],
     "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
     "$viewOrder": 3,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen4635",
@@ -43,8 +42,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "html": "<img src=\"\">",
-                "style": "background-image:url('http://www.miltonblack.com.au/images/Star%20Club/man.jpg')",
+                "html": "",
+                "style": null,
                 "designer|userClassName": "MyComponent2"
             },
             "customConfigs": [],
@@ -59,12 +58,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "bottom": 5,
                 "docked": null,
                 "id": "pictureButton",
+                "right": 5,
                 "width": null,
                 "iconCls": "add",
                 "iconMask": true,
-                "text": "",
+                "text": null,
                 "designer|userClassName": "MyButton1"
             },
             "customConfigs": [],
