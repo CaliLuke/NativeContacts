@@ -9,12 +9,12 @@
     "userConfig": {
         "id": "contactInfo",
         "padding": "10px",
-        "designer|userClassName": "contactInfo"
+        "designer|userClassName": "ContactInfo"
     },
     "customConfigs": [],
     "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
     "$viewOrder": 1,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen8444",
@@ -31,6 +31,22 @@
             "customConfigs": [],
             "expanded": true,
             "cn": [
+                {
+                    "id": "ExtBox1-ext-gen9643",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ui": "back",
+                        "text": "Back",
+                        "designer|userClassName": "MyButton5"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
                 {
                     "id": "ExtBox1-ext-gen6787",
                     "type": "component",
@@ -110,10 +126,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disabled": true,
                 "itemId": "emailAddress",
                 "clearIcon": false,
                 "label": "Email Address",
                 "labelAlign": "top",
+                "name": "emailAddress",
                 "readOnly": true,
                 "designer|userClassName": "MyTextField1"
             },
@@ -129,10 +147,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disabled": true,
                 "itemId": "phoneNumber",
                 "clearIcon": false,
                 "label": "Phone Number",
                 "labelAlign": "top",
+                "name": "phoneNumber",
                 "readOnly": true,
                 "designer|userClassName": "MyTextField1"
             },
@@ -148,11 +168,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disabled": true,
                 "id": "address",
                 "itemId": null,
                 "clearIcon": false,
                 "label": "Address",
                 "labelAlign": "top",
+                "name": "address",
                 "readOnly": true,
                 "designer|userClassName": "MyTextField1"
             },

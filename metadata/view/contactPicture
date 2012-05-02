@@ -17,8 +17,8 @@
         "masked": null,
         "modal": null,
         "scrollable": null,
-        "designer|userClassName": "contactPicture",
-        "designer|userAlias": "mycontainer3",
+        "designer|userClassName": "ContactPicture",
+        "designer|userAlias": "contactpic",
         "overflow": "hidden",
         "container|align": "center"
     },
@@ -31,7 +31,7 @@
     ],
     "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
     "$viewOrder": 3,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen4635",

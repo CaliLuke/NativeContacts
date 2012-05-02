@@ -1,0 +1,69 @@
+{
+    "id": "ExtBox1-ext-gen2077",
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MainPanel"
+    },
+    "customConfigs": [],
+    "designerId": "ab0ebc18-fc5b-43b1-8958-7395bd191769",
+    "$viewOrder": 0,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4203",
+            "type": "tabbar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": "",
+                "docked": "top",
+                "designer|userClassName": "MyTabBar",
+                "container|pack": "center"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-tab-bar",
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen11622",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Contacts"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen2950"
+        },
+        {
+            "id": "ExtBox1-ext-gen12883",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Favorites"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen4991"
+        }
+    ]
+}

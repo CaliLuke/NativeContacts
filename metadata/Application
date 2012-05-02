@@ -8,10 +8,12 @@
     "codeClass": null,
     "userConfig": {
         "views": [
-            "MyTabPanel",
-            "contactInfo",
-            "editContact",
-            "contactPicture"
+            "MainPanel",
+            "ContactInfo",
+            "ContactForm",
+            "ContactPicture",
+            "ContactList",
+            "FavoriteList"
         ],
         "name": "MyApp"
     },

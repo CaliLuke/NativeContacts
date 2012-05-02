@@ -10,7 +10,7 @@
         "id": "contactInfo",
         "padding": "10px",
         "scrollable": true,
-        "designer|userClassName": "editContact"
+        "designer|userClassName": "ContactForm"
     },
     "customConfigs": [],
     "designerId": "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
@@ -42,6 +42,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "starContact",
+                        "ui": "decline",
                         "iconCls": null,
                         "iconMask": true,
                         "text": "Cancel",
@@ -74,6 +75,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "editContact",
+                        "ui": "action",
                         "iconCls": "",
                         "iconMask": true,
                         "text": "Save",
@@ -111,6 +113,7 @@
                 "margin": "10px 0 0 0",
                 "label": "First Name",
                 "labelAlign": "top",
+                "name": "firstName",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField"
             },
@@ -129,6 +132,7 @@
                 "itemId": "lastName",
                 "label": "Last Name",
                 "labelAlign": "top",
+                "name": "lastName",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -147,6 +151,7 @@
                 "itemId": "phoneNumber",
                 "label": "Phone Number",
                 "labelAlign": "top",
+                "name": "phoneNumber",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -165,6 +170,7 @@
                 "itemId": "emailAddress",
                 "label": "Email Address",
                 "labelAlign": "top",
+                "name": "emailAddress",
                 "placeHolder": "email@example.com",
                 "readOnly": false,
                 "designer|userClassName": "MyEmailField"
@@ -184,6 +190,7 @@
                 "itemId": "address",
                 "label": "Address",
                 "labelAlign": "top",
+                "name": "address",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -202,6 +209,7 @@
                 "itemId": "city",
                 "label": "City",
                 "labelAlign": "top",
+                "name": "city",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -221,6 +229,7 @@
                 "itemId": "address",
                 "label": "State",
                 "labelAlign": "top",
+                "name": "city",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -240,6 +249,7 @@
                 "itemId": "address",
                 "label": "Zipcode",
                 "labelAlign": "top",
+                "name": "zipcode",
                 "readOnly": false,
                 "designer|userClassName": "MyNumberField"
             },
