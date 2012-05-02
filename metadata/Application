@@ -7,19 +7,65 @@
     },
     "codeClass": null,
     "userConfig": {
-        "views": [
-            "MainPanel",
-            "ContactInfo",
-            "ContactForm",
-            "ContactPicture",
-            "ContactList",
-            "FavoriteList"
+        "models": [
+            "Contact"
         ],
-        "name": "MyApp"
+        "stores": [
+            "ContactStore"
+        ],
+        "views": [
+            "Main",
+            "Info",
+            "Form",
+            "Picture",
+            "List",
+            "FavoriteView"
+        ],
+        "name": "Contact",
+        "controllers": [
+            "Contacts"
+        ],
+        "designer|requires": null
     },
     "customConfigs": [],
     "designerId": "application",
     "$viewOrder": 0,
     "iconCls": "icon-application",
-    "expanded": true
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen46097",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": "Ext.require('Ext.device.*');\nExt.util.Format.empty = function(value, defaultValue) {\n    return !Ext.isEmpty(value) ? value : defaultValue;\n};\nExt.util.Format.undef = function(value, defaultValue) {\n    return Ext.isDefined(value) ? value : defaultValue;\n};\nvar ds = Ext.StoreMgr.lookup('ContactStore');\nif (!ds.getCount()) {\n    Ext.Msg.alert('Intro', 'Setting up default database.');\n    ds.add({\n        firstName: 'Aaron',\n        lastName: 'Conran',\n        emailAddress: 'aaron@sencha.com',\n        phoneNumber: '443-555-1234'\n    });\n    ds.add({\n        firstName: 'Aditya',\n        lastName: 'Bansod',\n        phoneNumber: '555-555-1234'\n    });\n    ds.add({\n        firstName: 'Luca',\n        lastName: 'Candela',\n        phoneNumber: '555-555-1234'\n    });\n    ds.add({\n        firstName: 'Tommy',\n        lastName: 'Maintz',\n        isFavorite: true,\n        phoneNumber: '717-555-1234'\n    });\n    ds.add({\n        firstName: 'Nige',\n        lastName: '(Animal) White',\n        isFavorite: true,\n        phoneNumber: '555-555-1234'\n    });\n}",
+                "designer|userClassName": "launch"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-basic-function",
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen74334",
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enabled": true,
+                "paths": null,
+                "designer|userClassName": "Loader"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-loader",
+            "expanded": true
+        }
+    ]
 }

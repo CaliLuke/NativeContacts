@@ -9,7 +9,7 @@
     "userConfig": {
         "height": 120,
         "html": "<img src=\"images/contact.jpeg\">",
-        "id": "contactPicture",
+        "id": null,
         "minHeight": 100,
         "style": "overflow: hidden",
         "ui": "",
@@ -17,7 +17,7 @@
         "masked": null,
         "modal": null,
         "scrollable": null,
-        "designer|userClassName": "ContactPicture",
+        "designer|userClassName": "Picture",
         "designer|userAlias": "contactpic",
         "overflow": "hidden",
         "container|align": "center"
@@ -31,7 +31,7 @@
     ],
     "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
     "$viewOrder": 3,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen4635",
@@ -60,7 +60,8 @@
             "userConfig": {
                 "bottom": 5,
                 "docked": null,
-                "id": "pictureButton",
+                "id": null,
+                "itemId": "mybutton",
                 "right": 5,
                 "width": null,
                 "iconCls": "add",

@@ -1,0 +1,88 @@
+{
+    "id": "ExtBox1-ext-gen2950",
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemTpl": "<div>{firstName} {lastName}</div>",
+        "store": "ContactStore",
+        "disableSelection": true,
+        "grouped": true,
+        "designer|userClassName": "List",
+        "designer|userAlias": "contactlist"
+    },
+    "customConfigs": [],
+    "designerId": "5b610c64-3053-4d2f-8bfb-77077b9b2217",
+    "$viewOrder": 4,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen3212",
+            "type": "listindexbar",
+            "reference": {
+                "name": "indexBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "letters": null,
+                "designer|userClassName": "MyIndexBar"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen22882",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "designer|userClassName": "MyToolbar2"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen24559",
+                    "type": "spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MySpacer1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen23068",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "addContactBtn",
+                        "ui": "action",
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": null,
+                        "designer|userClassName": "MyButton6"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

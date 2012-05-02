@@ -8,7 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|initialView": true,
-        "designer|userClassName": "MainPanel"
+        "designer|userClassName": "Main"
     },
     "customConfigs": [],
     "designerId": "ab0ebc18-fc5b-43b1-8958-7395bd191769",
