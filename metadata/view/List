@@ -1,0 +1,38 @@
+{
+    "id": "ExtBox1-ext-gen2950",
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemTpl": "<div>{firstName} {lastName}</div>",
+        "store": "ContactStore",
+        "disableSelection": true,
+        "grouped": null,
+        "designer|userClassName": "List",
+        "designer|userAlias": "contactlist"
+    },
+    "customConfigs": [],
+    "designerId": "5b610c64-3053-4d2f-8bfb-77077b9b2217",
+    "$viewOrder": 4,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen3212",
+            "type": "listindexbar",
+            "reference": {
+                "name": "indexBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "letters": null,
+                "designer|userClassName": "MyIndexBar"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

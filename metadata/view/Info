@@ -1,20 +1,21 @@
 {
     "id": "ExtBox1-ext-gen6063",
-    "type": "container",
+    "type": "formpanel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "id": "contactInfo",
+        "id": null,
         "padding": "10px",
-        "designer|userClassName": "contactInfo"
+        "designer|userClassName": "Info",
+        "designer|userAlias": "contactinfo"
     },
     "customConfigs": [],
     "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
     "$viewOrder": 1,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen8444",
@@ -32,6 +33,23 @@
             "expanded": true,
             "cn": [
                 {
+                    "id": "ExtBox1-ext-gen9643",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "infoBackBtn",
+                        "ui": "back",
+                        "text": "Back",
+                        "designer|userClassName": "MyButton5"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
                     "id": "ExtBox1-ext-gen6787",
                     "type": "component",
                     "reference": {
@@ -42,9 +60,10 @@
                     "userConfig": {
                         "height": null,
                         "html": "First Name Last Name",
-                        "id": "nameBack",
+                        "id": null,
+                        "itemId": "nameTxt",
                         "designer|userClassName": "MyComponent",
-                        "layout|flex": 3
+                        "layout|flex": 1
                     },
                     "customConfigs": [],
                     "expanded": true
@@ -58,14 +77,35 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "starContact",
+                        "cls": "x-button-pressing",
+                        "id": null,
+                        "itemId": "favoriteBtn",
                         "iconCls": "favorites",
                         "iconMask": true,
                         "text": "",
                         "designer|userClassName": "MyButton"
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen77503",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFavoriteBtnTap",
+                                "implHandler": "var pressingCls = 'x-button-pressing';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
+                                "name": "tap",
+                                "designer|userClassName": "onFavoriteBtnTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 },
                 {
                     "id": "ExtBox1-ext-gen20878",
@@ -76,7 +116,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "editContact",
+                        "id": "",
+                        "itemId": "editContactBtn",
                         "iconCls": "compose",
                         "iconMask": true,
                         "text": "",
@@ -102,25 +143,6 @@
             "masterInstanceId": "ExtBox1-ext-gen15697"
         },
         {
-            "id": "ExtBox1-ext-gen19570",
-            "type": "textfield",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": "emailAddress",
-                "clearIcon": false,
-                "label": "Email Address",
-                "labelAlign": "top",
-                "readOnly": true,
-                "designer|userClassName": "MyTextField1"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
             "id": "ExtBox1-ext-gen19671",
             "type": "textfield",
             "reference": {
@@ -129,10 +151,34 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disabled": true,
                 "itemId": "phoneNumber",
                 "clearIcon": false,
                 "label": "Phone Number",
                 "labelAlign": "top",
+                "name": "phoneNumber",
+                "readOnly": true,
+                "designer|userClassName": "MyTextField1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19570",
+            "type": "textfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "emailAddress",
+                "clearIcon": false,
+                "label": "Email Address",
+                "labelAlign": "top",
+                "name": "emailAddress",
+                "placeHolder": "Email address not provided",
                 "readOnly": true,
                 "designer|userClassName": "MyTextField1"
             },
@@ -148,13 +194,35 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disabled": true,
                 "id": "address",
                 "itemId": null,
                 "clearIcon": false,
                 "label": "Address",
                 "labelAlign": "top",
+                "name": "address",
+                "placeHolder": "Address not provided",
                 "readOnly": true,
                 "designer|userClassName": "MyTextField1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen63864",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setInfo",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": "this.setRecord(record);\nvar name = record.get('firstName') + ' ' + (record.get('lastName') || '');\nvar isFavorite = record.get('isFavorite');\nthis.down('#nameTxt').setHtml(name);\n// this.child('#contactPic').setPic(record.picture);\nthis.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressing');",
+                "designer|userClassName": "setInfo"
             },
             "customConfigs": [],
             "expanded": true

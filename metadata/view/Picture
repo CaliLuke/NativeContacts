@@ -9,7 +9,7 @@
     "userConfig": {
         "height": 120,
         "html": "<img src=\"images/contact.jpeg\">",
-        "id": "contactPicture",
+        "id": null,
         "minHeight": 100,
         "style": "overflow: hidden",
         "ui": "",
@@ -17,8 +17,8 @@
         "masked": null,
         "modal": null,
         "scrollable": null,
-        "designer|userClassName": "contactPicture",
-        "designer|userAlias": "mycontainer3",
+        "designer|userClassName": "Picture",
+        "designer|userAlias": "contactpic",
         "overflow": "hidden",
         "container|align": "center"
     },
@@ -31,7 +31,7 @@
     ],
     "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
     "$viewOrder": 3,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen4635",
@@ -60,7 +60,8 @@
             "userConfig": {
                 "bottom": 5,
                 "docked": null,
-                "id": "pictureButton",
+                "id": null,
+                "itemId": "mybutton",
                 "right": 5,
                 "width": null,
                 "iconCls": "add",
@@ -69,7 +70,26 @@
                 "designer|userClassName": "MyButton1"
             },
             "customConfigs": [],
-            "expanded": true
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen75593",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAddPictureButtonTap",
+                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('picture', url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    },\n    scope: this\n});",
+                        "name": "tap",
+                        "designer|userClassName": "onAddPictureButtonTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
         }
     ]
 }

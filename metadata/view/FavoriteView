@@ -1,0 +1,21 @@
+{
+    "id": "ExtBox1-ext-gen4991",
+    "type": "dataview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "scrollable": "horizontal",
+        "inline": "true",
+        "itemTpl": "<img src=\"{picture:empty(\"resources/img/defaultContactPic.png\")}\" /><div>{firstName} {lastName}</div>",
+        "store": "ContactStore",
+        "designer|userClassName": "FavoriteView",
+        "designer|userAlias": "favoriteview"
+    },
+    "customConfigs": [],
+    "designerId": "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b",
+    "$viewOrder": 5,
+    "expanded": true
+}
