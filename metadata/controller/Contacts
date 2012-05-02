@@ -1,0 +1,227 @@
+{
+    "id": "ExtBox1-ext-gen24846",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "ContactStore"
+        ],
+        "designer|userClassName": "Contacts"
+    },
+    "customConfigs": [],
+    "designerId": "12f4e105-fe10-4110-a7c7-4be456e0092e",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen25027",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "contactinfo",
+                "selector": "contactinfo",
+                "xtype": "contactinfo",
+                "autoCreate": true,
+                "designer|userClassName": "contactinfo"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen25200",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "contactform",
+                "selector": "contactform",
+                "xtype": "contactform",
+                "autoCreate": true,
+                "designer|userClassName": "contactform"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen26386",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "contactlist",
+                "selector": "contactlist",
+                "xtype": "contactlist",
+                "autoCreate": true,
+                "designer|userClassName": "contactlist"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen32770",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddContactBtnTap",
+                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nform.setRecord(null);\nform.reset();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#addContactBtn",
+                "designer|userClassName": "onAddContactBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen34079",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSaveContactBtnTap",
+                "implHandler": "var form = this.getContactform();\nvar errors = form.getValidationErrors();\n\nif (errors.length) {\n    Ext.Msg.alert('Error', errors.join('<br/>'));\n} else {\n    var values = form.getValues();\n    var record = form.getRecord();\n    if (record) {\n        record.setData(values);\n        record.commit();\n        if (form.referrer.setInfo) {\n            form.referrer.setInfo(record);\n        }\n    } else {\n        Ext.StoreManager.lookup('ContactStore').add(values);\n    }\n    Ext.Viewport.setActiveItem(form.referrer);\n    delete form.referrer;\n}\n",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#saveContactBtn",
+                "designer|userClassName": "onSaveContactBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen43963",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditContactBtnTap",
+                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nvar info = this.getContactinfo();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);\nform.setRecord(info.getRecord());",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#editContactBtn",
+                "designer|userClassName": "onEditContactBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen47869",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelBtnTap",
+                "implHandler": "var form = this.getContactform();\nExt.Viewport.setActiveItem(form.referrer);\ndelete form.referrer;\n",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#cancelBtn",
+                "designer|userClassName": "onCancelBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen49089",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContactItemTap",
+                "implHandler": "var info = this.getContactinfo();\ninfo.setInfo(record);\nExt.Viewport.setActiveItem(info);\n",
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.DataView",
+                "designer|controlQuery": "dataview",
+                "designer|userClassName": "onContactItemTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen52208",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onInfoBackBtnTap",
+                "implHandler": "Ext.Viewport.setActiveItem(0);",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#infoBackBtn",
+                "designer|userClassName": "onInfoBackBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen70386",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFavoriteViewActivate",
+                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.filter('isFavorite', true);",
+                "name": "activate",
+                "designer|targetType": "Ext.dataview.DataView",
+                "designer|controlQuery": "favoriteview",
+                "designer|userClassName": "onFavoriteViewActivate"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen71213",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListActivate",
+                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.clearFilter();",
+                "name": "activate",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list",
+                "designer|userClassName": "onListActivate"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

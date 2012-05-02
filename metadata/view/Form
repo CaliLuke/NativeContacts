@@ -1,16 +1,18 @@
 {
     "id": "ExtBox1-ext-gen27267",
-    "type": "container",
+    "type": "formpanel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "id": "contactInfo",
+        "id": null,
+        "itemId": "formCancelBtn",
         "padding": "10px",
-        "scrollable": true,
-        "designer|userClassName": "editContact"
+        "scrollable": "true",
+        "designer|userClassName": "Form",
+        "designer|userAlias": "contactform"
     },
     "customConfigs": [],
     "designerId": "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
@@ -42,6 +44,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "starContact",
+                        "itemId": "cancelBtn",
+                        "ui": "decline",
                         "iconCls": null,
                         "iconMask": true,
                         "text": "Cancel",
@@ -73,7 +77,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "editContact",
+                        "id": null,
+                        "itemId": "saveContactBtn",
+                        "ui": "action",
                         "iconCls": "",
                         "iconMask": true,
                         "text": "Save",
@@ -111,6 +117,8 @@
                 "margin": "10px 0 0 0",
                 "label": "First Name",
                 "labelAlign": "top",
+                "name": "firstName",
+                "required": true,
                 "readOnly": false,
                 "designer|userClassName": "MyTextField"
             },
@@ -129,6 +137,7 @@
                 "itemId": "lastName",
                 "label": "Last Name",
                 "labelAlign": "top",
+                "name": "lastName",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -147,6 +156,8 @@
                 "itemId": "phoneNumber",
                 "label": "Phone Number",
                 "labelAlign": "top",
+                "name": "phoneNumber",
+                "required": true,
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -165,6 +176,7 @@
                 "itemId": "emailAddress",
                 "label": "Email Address",
                 "labelAlign": "top",
+                "name": "emailAddress",
                 "placeHolder": "email@example.com",
                 "readOnly": false,
                 "designer|userClassName": "MyEmailField"
@@ -184,6 +196,7 @@
                 "itemId": "address",
                 "label": "Address",
                 "labelAlign": "top",
+                "name": "address",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -202,6 +215,7 @@
                 "itemId": "city",
                 "label": "City",
                 "labelAlign": "top",
+                "name": "city",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -221,6 +235,7 @@
                 "itemId": "address",
                 "label": "State",
                 "labelAlign": "top",
+                "name": "city",
                 "readOnly": false,
                 "designer|userClassName": "MyTextField1"
             },
@@ -240,8 +255,25 @@
                 "itemId": "address",
                 "label": "Zipcode",
                 "labelAlign": "top",
+                "name": "zipcode",
                 "readOnly": false,
                 "designer|userClassName": "MyNumberField"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen53380",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getValidationErrors",
+                "implHandler": "var errors = [];\nvar reqFields = this.query('field[required=true]');\nvar i = 0, ln = reqFields.length, field;\nfor (; i < ln; i++) {\n    field = reqFields[i];\n    if (!field.getValue()) {\n        errors.push(field.getLabel() + ' must be completed.');\n    }\n}\nconsole.dir(errors);\nreturn errors;",
+                "designer|userClassName": "getValidationErrors"
             },
             "customConfigs": [],
             "expanded": true
