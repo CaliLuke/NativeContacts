@@ -25,7 +25,9 @@
         "controllers": [
             "Contacts"
         ],
-        "designer|requires": null
+        "designer|requires": [
+            "Ext.device.Camera"
+        ]
     },
     "customConfigs": [],
     "designerId": "application",
@@ -60,7 +62,7 @@
             "codeClass": null,
             "userConfig": {
                 "enabled": true,
-                "paths": null,
+                "paths": "{\"Ext.device\":\"device/\"}",
                 "designer|userClassName": "Loader"
             },
             "customConfigs": [],

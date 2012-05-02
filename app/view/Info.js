@@ -92,7 +92,21 @@ Ext.define('Contact.view.Info', {
                 placeHolder: 'Address not provided',
                 readOnly: true
             }
+        ],
+        listeners: [
+            {
+                fn: 'onFavoriteBtnTap',
+                event: 'tap',
+                delegate: '#favoriteBtn'
+            }
         ]
+    },
+
+    onFavoriteBtnTap: function(button, e, options) {
+        var pressingCls = 'x-button-pressing';
+        button.element.toggleCls(pressingCls);
+        var isPressed = button.element.hasCls(pressingCls);
+        this.getRecord().set('isFavorite', isPressed);
     },
 
     setInfo: function(record) {

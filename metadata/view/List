@@ -10,7 +10,7 @@
         "itemTpl": "<div>{firstName} {lastName}</div>",
         "store": "ContactStore",
         "disableSelection": true,
-        "grouped": true,
+        "grouped": null,
         "designer|userClassName": "List",
         "designer|userAlias": "contactlist"
     },

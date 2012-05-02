@@ -20,7 +20,6 @@ Ext.define('Contact.view.List', {
     config: {
         store: 'ContactStore',
         disableSelection: true,
-        grouped: true,
         indexBar: true,
         itemTpl: [
             '<div>{firstName} {lastName}</div>'

@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen8444",
@@ -86,7 +86,26 @@
                         "designer|userClassName": "MyButton"
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen77503",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFavoriteBtnTap",
+                                "implHandler": "var pressingCls = 'x-button-pressing';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
+                                "name": "tap",
+                                "designer|userClassName": "onFavoriteBtnTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 },
                 {
                     "id": "ExtBox1-ext-gen20878",

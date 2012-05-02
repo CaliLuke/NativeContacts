@@ -70,7 +70,26 @@
                 "designer|userClassName": "MyButton1"
             },
             "customConfigs": [],
-            "expanded": true
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen75593",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMybuttonTap",
+                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('picture', url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    }\n});",
+                        "name": "tap",
+                        "designer|userClassName": "onMybuttonTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
         }
     ]
 }

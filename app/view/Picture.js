@@ -41,7 +41,28 @@ Ext.define('Contact.view.Picture', {
                 iconCls: 'add',
                 iconMask: true
             }
+        ],
+        listeners: [
+            {
+                fn: 'onMybuttonTap',
+                event: 'tap',
+                delegate: '#mybutton'
+            }
         ]
+    },
+
+    onMybuttonTap: function(button, e, options) {
+        Ext.device.Camera.capture({
+            source: 'camera',
+            destination: 'file',
+
+            success: function(url) {
+                this.fireEvent('picture', url);
+            },
+            failure: function() {
+                Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');
+            }
+        });
     }
 
 });

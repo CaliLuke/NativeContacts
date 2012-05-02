@@ -14,10 +14,17 @@
  */
 
 Ext.Loader.setConfig({
-    enabled: true
+    enabled: true,
+    paths: {
+        'Ext.device': 'device/'
+    }
 });
 
 Ext.application({
+    requires: [
+        'Ext.device.Camera'
+    ],
+
     models: [
         'Contact'
     ],
