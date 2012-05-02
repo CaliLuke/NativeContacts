@@ -44,6 +44,7 @@ Ext.define('Contact.view.Main', {
                 items: [
                     {
                         xtype: 'button',
+                        cls: 'square',
                         itemId: 'addContactBtn',
                         ui: 'action',
                         iconCls: 'add',

@@ -1,12 +1,12 @@
 {
     "name": "NativeContacts",
     "settings": {
-        "urlPrefix": "http://localhost/NativeContacts/",
+        "urlPrefix": "http://localhost/~luca/NativeContacts/",
         "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
-        "exportPath": "/Users/aconran/Sites/deploynative",
-        "extPath": "http://localhost/releases/sencha-touch-2.0.1/",
+        "exportPath": "/Users/luca/Sites/NativeDeploy",
+        "extPath": "http://localhost/~luca/st2/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
         "lineEnding": "LF",

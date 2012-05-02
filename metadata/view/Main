@@ -89,6 +89,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "cls": "square",
                         "itemId": "addContactBtn",
                         "ui": "action",
                         "iconCls": "add",
