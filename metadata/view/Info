@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen8444",
@@ -77,9 +77,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "cls": "x-button-pressing",
+                        "cls": null,
                         "id": null,
                         "itemId": "favoriteBtn",
+                        "ui": null,
                         "iconCls": "favorites",
                         "iconMask": true,
                         "text": "",
@@ -98,7 +99,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onFavoriteBtnTap",
-                                "implHandler": "var pressingCls = 'x-button-pressing';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
+                                "implHandler": "var pressingCls = 'x-button-pressed';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
                                 "name": "tap",
                                 "designer|userClassName": "onFavoriteBtnTap"
                             },
@@ -217,12 +218,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "setInfo",
+                "fn": "setRecord",
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "this.setRecord(record);\nvar name = record.get('firstName') + ' ' + (record.get('lastName') || '');\nvar isFavorite = record.get('isFavorite');\nthis.down('#nameTxt').setHtml(name);\n// this.child('#contactPic').setPic(record.picture);\nthis.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressing');",
-                "designer|userClassName": "setInfo"
+                "implHandler": "this.callParent(arguments);\nif (record) {\n    var name = record.get('firstName') + ' ' + (record.get('lastName') || '');\n    var isFavorite = record.get('isFavorite');\n    this.down('#nameTxt').setHtml(name);\n    this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressed');\n    this.down('contactpic').setData(record.data);\n}",
+                "designer|userClassName": "setRecord"
             },
             "customConfigs": [],
             "expanded": true

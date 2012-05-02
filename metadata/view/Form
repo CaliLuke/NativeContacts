@@ -17,7 +17,7 @@
     "customConfigs": [],
     "designerId": "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
     "$viewOrder": 2,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen27271",
@@ -274,6 +274,25 @@
                 "fn": "getValidationErrors",
                 "implHandler": "var errors = [];\nvar reqFields = this.query('field[required=true]');\nvar i = 0, ln = reqFields.length, field;\nfor (; i < ln; i++) {\n    field = reqFields[i];\n    if (!field.getValue()) {\n        errors.push(field.getLabel() + ' must be completed.');\n    }\n}\nconsole.dir(errors);\nreturn errors;",
                 "designer|userClassName": "getValidationErrors"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3024",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setRecord",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": "this.callParent(arguments);\nif (record) {\n    this.child('contactpic').setData(record.data);\n}",
+                "designer|userClassName": "setRecord"
             },
             "customConfigs": [],
             "expanded": true

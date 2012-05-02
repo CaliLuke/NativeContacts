@@ -7,10 +7,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "emptyText": "No Contacts",
         "itemTpl": "<div>{firstName} {lastName}</div>",
         "store": "ContactStore",
         "disableSelection": true,
-        "grouped": null,
+        "grouped": true,
         "designer|userClassName": "List",
         "designer|userAlias": "contactlist"
     },

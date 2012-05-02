@@ -138,6 +138,13 @@ Ext.define('Contact.view.Form', {
         }
         console.dir(errors);
         return errors;
+    },
+
+    setRecord: function(record) {
+        this.callParent(arguments);
+        if (record) {
+            this.child('contactpic').setData(record.data);
+        }
     }
 
 });

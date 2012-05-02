@@ -8,8 +8,9 @@
     "codeClass": null,
     "userConfig": {
         "scrollable": "horizontal",
+        "emptyText": "No Favorite Contacts",
         "inline": "true",
-        "itemTpl": "<img src=\"{picture:empty(\"resources/img/defaultContactPic.png\")}\" /><div>{firstName} {lastName}</div>",
+        "itemTpl": "<img src=\"{picture:empty(\"resources/img/defaultContactPic.png\")}\" width=\"160\" /><div>{firstName} {lastName}</div>",
         "store": "ContactStore",
         "designer|userClassName": "FavoriteView",
         "designer|userAlias": "favoriteview"
