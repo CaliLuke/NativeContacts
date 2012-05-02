@@ -8,10 +8,11 @@
     "codeClass": null,
     "userConfig": {
         "height": 120,
-        "html": "<img src=\"images/contact.jpeg\">",
+        "html": null,
         "id": null,
         "minHeight": 100,
         "style": "overflow: hidden",
+        "tpl": "<img src=\"{picture}\" width=\"160\" />",
         "ui": "",
         "layout": "vbox",
         "masked": null,
@@ -81,10 +82,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onAddPictureButtonTap",
-                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('picture', url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    },\n    scope: this\n});",
+                        "fn": "onMybuttonTap",
+                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('change', this, url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    },\n    scope: this\n});",
                         "name": "tap",
-                        "designer|userClassName": "onAddPictureButtonTap"
+                        "designer|userClassName": "onMybuttonTap"
                     },
                     "customConfigs": [],
                     "expanded": true

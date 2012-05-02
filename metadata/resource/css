@@ -1,0 +1,16 @@
+{
+    "id": "ExtBox1-ext-gen8434",
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "resources/css/contacts.css"
+    },
+    "customConfigs": [],
+    "designerId": "83d5f462-ac48-477a-8b82-5867e132986d",
+    "$viewOrder": 0,
+    "expanded": true
+}

@@ -6,7 +6,7 @@
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "exportPath": "/Users/aconran/Sites/deploynative",
-        "extPath": "http://localhost/releases/sencha-touch-2.0.0-commercial/",
+        "extPath": "http://localhost/releases/sencha-touch-2.0.1/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
         "lineEnding": "LF",
@@ -91,6 +91,12 @@
                 "app/controller/Contacts.js"
             ],
             "className": "Contacts"
+        },
+        "83d5f462-ac48-477a-8b82-5867e132986d": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
         }
     },
     "expandedState": {
