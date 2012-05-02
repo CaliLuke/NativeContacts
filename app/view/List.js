@@ -18,8 +18,10 @@ Ext.define('Contact.view.List', {
     alias: 'widget.contactlist',
 
     config: {
+        emptyText: 'No Contacts',
         store: 'ContactStore',
         disableSelection: true,
+        grouped: true,
         indexBar: true,
         itemTpl: [
             '<div>{firstName} {lastName}</div>'

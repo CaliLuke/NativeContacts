@@ -41,7 +41,6 @@ Ext.define('Contact.view.Info', {
                     },
                     {
                         xtype: 'button',
-                        cls: 'x-button-pressing',
                         itemId: 'favoriteBtn',
                         iconCls: 'favorites',
                         iconMask: true,
@@ -103,19 +102,21 @@ Ext.define('Contact.view.Info', {
     },
 
     onFavoriteBtnTap: function(button, e, options) {
-        var pressingCls = 'x-button-pressing';
+        var pressingCls = 'x-button-pressed';
         button.element.toggleCls(pressingCls);
         var isPressed = button.element.hasCls(pressingCls);
         this.getRecord().set('isFavorite', isPressed);
     },
 
-    setInfo: function(record) {
-        this.setRecord(record);
-        var name = record.get('firstName') + ' ' + (record.get('lastName') || '');
-        var isFavorite = record.get('isFavorite');
-        this.down('#nameTxt').setHtml(name);
-        // this.child('#contactPic').setPic(record.picture);
-        this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressing');
+    setRecord: function(record) {
+        this.callParent(arguments);
+        if (record) {
+            var name = record.get('firstName') + ' ' + (record.get('lastName') || '');
+            var isFavorite = record.get('isFavorite');
+            this.down('#nameTxt').setHtml(name);
+            this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressed');
+            this.down('contactpic').setData(record.data);
+        }
     }
 
 });

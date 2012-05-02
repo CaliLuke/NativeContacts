@@ -62,6 +62,9 @@ Ext.define('Contact.controller.Contacts', {
             },
             "list": {
                 activate: 'onListActivate'
+            },
+            "contactpic": {
+                change: 'onContactPickerChange'
             }
         }
     },
@@ -117,7 +120,7 @@ Ext.define('Contact.controller.Contacts', {
 
     onContactItemTap: function(dataview, index, target, record, e, options) {
         var info = this.getContactinfo();
-        info.setInfo(record);
+        info.setRecord(record);
         Ext.Viewport.setActiveItem(info);
 
     },
@@ -134,6 +137,18 @@ Ext.define('Contact.controller.Contacts', {
     onListActivate: function(container, newActiveItem, oldActiveItem, options) {
         var ds = Ext.StoreManager.lookup('ContactStore');
         ds.clearFilter();
+    },
+
+    onContactPickerChange: function(picker, value, options) {
+        var currentForm = Ext.Viewport.getActiveItem();
+        var record = currentForm.getRecord();
+        if (record) {
+            Ext.Msg.alert('pic', 'setting pic to ' + value);
+            record.set('picture', value);
+            record.commit();
+            currentForm.setRecord(record);
+        }
+
     }
 
 });

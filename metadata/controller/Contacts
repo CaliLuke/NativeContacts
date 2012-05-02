@@ -157,7 +157,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onContactItemTap",
-                "implHandler": "var info = this.getContactinfo();\ninfo.setInfo(record);\nExt.Viewport.setActiveItem(info);\n",
+                "implHandler": "var info = this.getContactinfo();\ninfo.setRecord(record);\nExt.Viewport.setActiveItem(info);\n",
                 "name": "itemtap",
                 "designer|targetType": "Ext.dataview.DataView",
                 "designer|controlQuery": "dataview",
@@ -219,6 +219,25 @@
                 "designer|targetType": "Ext.dataview.List",
                 "designer|controlQuery": "list",
                 "designer|userClassName": "onListActivate"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8904",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContactPickerChange",
+                "implHandler": "var currentForm = Ext.Viewport.getActiveItem();\nvar record = currentForm.getRecord();\nif (record) {\n    Ext.Msg.alert('pic', 'setting pic to ' + value);\n    record.set('picture', value);\n    record.commit();\n    currentForm.setRecord(record);\n}\n",
+                "name": "change",
+                "designer|targetType": "Ext.picker.Picker",
+                "designer|controlQuery": "contactpic",
+                "designer|userClassName": "onContactPickerChange"
             },
             "customConfigs": [],
             "expanded": true

@@ -19,7 +19,6 @@ Ext.define('Contact.view.Picture', {
 
     config: {
         height: 120,
-        html: '<img src="images/contact.jpeg">',
         minHeight: 100,
         style: 'overflow: hidden',
         ui: '',
@@ -28,6 +27,9 @@ Ext.define('Contact.view.Picture', {
             type: 'vbox'
         },
         overflow: 'hidden',
+        tpl: [
+            '<img src="{picture}" width="160" />'
+        ],
         items: [
             {
                 xtype: 'component',
@@ -44,20 +46,20 @@ Ext.define('Contact.view.Picture', {
         ],
         listeners: [
             {
-                fn: 'onAddPictureButtonTap',
+                fn: 'onMybuttonTap',
                 event: 'tap',
                 delegate: '#mybutton'
             }
         ]
     },
 
-    onAddPictureButtonTap: function(button, e, options) {
+    onMybuttonTap: function(button, e, options) {
         Ext.device.Camera.capture({
             source: 'camera',
             destination: 'file',
 
             success: function(url) {
-                this.fireEvent('picture', url);
+                this.fireEvent('change', this, url);
             },
             failure: function() {
                 Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');

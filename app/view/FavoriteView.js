@@ -19,10 +19,11 @@ Ext.define('Contact.view.FavoriteView', {
 
     config: {
         scrollable: 'horizontal',
+        emptyText: 'No Favorite Contacts',
         inline: true,
         store: 'ContactStore',
         itemTpl: [
-            '<img src="{picture:empty("resources/img/defaultContactPic.png")}" /><div>{firstName} {lastName}</div>'
+            '<img src="{picture:empty("resources/img/defaultContactPic.png")}" width="160" /><div>{firstName} {lastName}</div>'
         ]
     }
 
