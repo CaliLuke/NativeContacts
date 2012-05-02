@@ -33,56 +33,6 @@
             },
             "customConfigs": [],
             "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen22882",
-            "type": "toolbar",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "docked": "top",
-                "designer|userClassName": "MyToolbar2"
-            },
-            "customConfigs": [],
-            "expanded": true,
-            "cn": [
-                {
-                    "id": "ExtBox1-ext-gen24559",
-                    "type": "spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "MySpacer1"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen23068",
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "addContactBtn",
-                        "ui": "action",
-                        "iconCls": "add",
-                        "iconMask": true,
-                        "text": null,
-                        "designer|userClassName": "MyButton6"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                }
-            ]
         }
     ]
 }

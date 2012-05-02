@@ -23,24 +23,6 @@ Ext.define('Contact.view.List', {
         indexBar: true,
         itemTpl: [
             '<div>{firstName} {lastName}</div>'
-        ],
-        items: [
-            {
-                xtype: 'toolbar',
-                docked: 'top',
-                items: [
-                    {
-                        xtype: 'spacer'
-                    },
-                    {
-                        xtype: 'button',
-                        itemId: 'addContactBtn',
-                        ui: 'action',
-                        iconCls: 'add',
-                        iconMask: true
-                    }
-                ]
-            }
         ]
     }
 

@@ -31,7 +31,7 @@
     ],
     "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
     "$viewOrder": 3,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen4635",
@@ -81,10 +81,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onMybuttonTap",
-                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('picture', url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    }\n});",
+                        "fn": "onAddPictureButtonTap",
+                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('picture', url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    },\n    scope: this\n});",
                         "name": "tap",
-                        "designer|userClassName": "onMybuttonTap"
+                        "designer|userClassName": "onAddPictureButtonTap"
                     },
                     "customConfigs": [],
                     "expanded": true

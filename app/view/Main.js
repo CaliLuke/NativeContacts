@@ -37,6 +37,20 @@ Ext.define('Contact.view.Main', {
             {
                 xtype: 'favoriteview',
                 title: 'Favorites'
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [
+                    {
+                        xtype: 'button',
+                        itemId: 'addContactBtn',
+                        ui: 'action',
+                        iconCls: 'add',
+                        iconMask: true,
+                        text: 'Add Contact'
+                    }
+                ]
             }
         ]
     }

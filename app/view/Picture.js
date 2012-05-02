@@ -44,14 +44,14 @@ Ext.define('Contact.view.Picture', {
         ],
         listeners: [
             {
-                fn: 'onMybuttonTap',
+                fn: 'onAddPictureButtonTap',
                 event: 'tap',
                 delegate: '#mybutton'
             }
         ]
     },
 
-    onMybuttonTap: function(button, e, options) {
+    onAddPictureButtonTap: function(button, e, options) {
         Ext.device.Camera.capture({
             source: 'camera',
             destination: 'file',
@@ -61,7 +61,8 @@ Ext.define('Contact.view.Picture', {
             },
             failure: function() {
                 Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');
-            }
+            },
+            scope: this
         });
     }
 

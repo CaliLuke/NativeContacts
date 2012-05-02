@@ -16,7 +16,7 @@
     "customConfigs": [],
     "designerId": "8173b689-b7f9-4661-9bb0-6cba367d3d80",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen21180",
@@ -44,7 +44,7 @@
                 "designer|userClassName": "MyGrouper"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen32026",
