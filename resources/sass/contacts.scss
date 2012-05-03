@@ -1,8 +1,7 @@
 // Variable overrides
+$myblue: #2BD;
 
-// $myblue: #2BD;
-
-// $base-color: $myblue;
+$base-color: $myblue;
 
 // Including Sencha Touch styles
 
@@ -27,4 +26,9 @@
 
 .square {
 	border-radius: 0px;
+}
+
+.contact-name {
+	color: white;
+	padding-left: 4px;
 }
