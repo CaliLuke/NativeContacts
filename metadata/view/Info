@@ -58,6 +58,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "cls": [
+                            "contact-name"
+                        ],
                         "height": null,
                         "html": "First Name Last Name",
                         "id": null,
@@ -99,7 +102,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onFavoriteBtnTap",
-                                "implHandler": "var pressingCls = 'x-button-pressed';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
+                                "implHandler": "var pressingCls = 'x-button-pressed';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nvar record = this.getRecord();\nrecord.set('isFavorite', isPressed);",
                                 "name": "tap",
                                 "designer|userClassName": "onFavoriteBtnTap"
                             },

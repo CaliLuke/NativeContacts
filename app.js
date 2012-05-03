@@ -45,7 +45,6 @@ Ext.application({
     ],
 
     launch: function() {
-        Ext.require('Ext.device.*');
         Ext.util.Format.empty = function(value, defaultValue) {
             return !Ext.isEmpty(value) ? value : defaultValue;
         };

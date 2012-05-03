@@ -100,7 +100,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onSaveContactBtnTap",
-                "implHandler": "var form = this.getContactform();\nvar errors = form.getValidationErrors();\n\nif (errors.length) {\n    Ext.Msg.alert('Error', errors.join('<br/>'));\n} else {\n    var values = form.getValues();\n    var record = form.getRecord();\n    if (record) {\n        record.setData(values);\n        record.commit();\n        if (form.referrer.setInfo) {\n            form.referrer.setInfo(record);\n        }\n    } else {\n        Ext.StoreManager.lookup('ContactStore').add(values);\n    }\n    Ext.Viewport.setActiveItem(form.referrer);\n    delete form.referrer;\n}\n",
+                "implHandler": "var form = this.getContactform();\nvar errors = form.getValidationErrors();\n\nif (errors.length) {\n    Ext.Msg.alert('Error', errors.join('<br/>'));\n} else {\n    var values = form.getValues();\n    var record = form.getRecord();\n    if (record) {\n        record.setData(values);\n        record.commit();\n        if (form.referrer.setRecord) {\n            form.referrer.setRecord(record);\n        }\n    } else {\n        Ext.StoreManager.lookup('ContactStore').add(values);\n    }\n    Ext.Viewport.setActiveItem(form.referrer);\n    delete form.referrer;\n}\n",
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#saveContactBtn",
@@ -233,7 +233,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onContactPickerChange",
-                "implHandler": "var currentForm = Ext.Viewport.getActiveItem();\nvar record = currentForm.getRecord();\nif (record) {\n    Ext.Msg.alert('pic', 'setting pic to ' + value);\n    record.set('picture', value);\n    record.commit();\n    currentForm.setRecord(record);\n}\n",
+                "implHandler": "var currentForm = Ext.Viewport.getActiveItem();\nvar record = currentForm.getRecord();\nif (record) {\n    //    Ext.Msg.alert('pic', 'setting pic to ' + value);\n    record.set('picture', value);\n    record.commit();\n    currentForm.setRecord(record);\n}\n",
                 "name": "change",
                 "designer|targetType": "Ext.picker.Picker",
                 "designer|controlQuery": "contactpic",

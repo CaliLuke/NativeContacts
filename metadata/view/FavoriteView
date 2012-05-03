@@ -7,7 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": "horizontal",
+        "scrollable": "vertical",
         "emptyText": "No Favorite Contacts",
         "inline": "true",
         "itemTpl": "<img src=\"{picture:empty(\"resources/img/defaultContactPic.png\")}\" width=\"160\" /><div>{firstName} {lastName}</div>",

@@ -90,8 +90,8 @@ Ext.define('Contact.controller.Contacts', {
             if (record) {
                 record.setData(values);
                 record.commit();
-                if (form.referrer.setInfo) {
-                    form.referrer.setInfo(record);
+                if (form.referrer.setRecord) {
+                    form.referrer.setRecord(record);
                 }
             } else {
                 Ext.StoreManager.lookup('ContactStore').add(values);
@@ -143,7 +143,7 @@ Ext.define('Contact.controller.Contacts', {
         var currentForm = Ext.Viewport.getActiveItem();
         var record = currentForm.getRecord();
         if (record) {
-            Ext.Msg.alert('pic', 'setting pic to ' + value);
+            //    Ext.Msg.alert('pic', 'setting pic to ' + value);
             record.set('picture', value);
             record.commit();
             currentForm.setRecord(record);

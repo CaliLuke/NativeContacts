@@ -18,7 +18,7 @@ Ext.define('Contact.view.FavoriteView', {
     alias: 'widget.favoriteview',
 
     config: {
-        scrollable: 'horizontal',
+        scrollable: 'vertical',
         emptyText: 'No Favorite Contacts',
         inline: true,
         store: 'ContactStore',

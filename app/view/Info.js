@@ -35,6 +35,9 @@ Ext.define('Contact.view.Info', {
                     },
                     {
                         xtype: 'component',
+                        cls: [
+                            'contact-name'
+                        ],
                         html: 'First Name Last Name',
                         itemId: 'nameTxt',
                         flex: 1
@@ -105,7 +108,8 @@ Ext.define('Contact.view.Info', {
         var pressingCls = 'x-button-pressed';
         button.element.toggleCls(pressingCls);
         var isPressed = button.element.hasCls(pressingCls);
-        this.getRecord().set('isFavorite', isPressed);
+        var record = this.getRecord();
+        record.set('isFavorite', isPressed);
     },
 
     setRecord: function(record) {
