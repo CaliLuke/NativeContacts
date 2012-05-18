@@ -17,7 +17,7 @@
     "customConfigs": [],
     "designerId": "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
     "$viewOrder": 2,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen27271",
@@ -33,7 +33,7 @@
                 "designer|userClassName": "MyToolbar"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen27280",
@@ -120,7 +120,7 @@
                 "designer|userClassName": "MyFieldSet"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen27303",
@@ -290,7 +290,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "group",
-                        "label": "Field",
+                        "label": "Group",
                         "name": "group",
                         "displayField": "name",
                         "store": "GroupStore",

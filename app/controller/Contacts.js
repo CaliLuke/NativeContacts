@@ -60,8 +60,8 @@ Ext.define('Contact.controller.Contacts', {
             "dataview": {
                 itemtap: 'onContactListTap'
             },
-            "favoriteview": {
-                activate: 'onFavoriteViewActivate'
+            "grouplist": {
+                itemtap: 'onGroupListItemTap'
             },
             "tabpanel": {
                 activate: 'onTabpanelActivate',
@@ -84,7 +84,7 @@ Ext.define('Contact.controller.Contacts', {
 
     onAddGroupBtnTap: function(button, e, options) {
         Ext.Msg.prompt('Add Group',
-        'Enter the group name:',
+        'Enter the group name',
         function (button, name) {
             if (button === 'ok') {
                 var cc = Contact.app.getController('Contacts');
@@ -151,7 +151,7 @@ Ext.define('Contact.controller.Contacts', {
     onContactListTap: function(dataview, index, target, record, e, options) {
         var active = dataview.getItemId();
 
-        var items = ['ContactList', 'FavoriteView'];
+        var items = ['ContactList', 'FavoriteView', 'Alphabetical', 'ByGroup'];
 
         if (active in this.allowed(items)) {
             var info = this.getContactinfo();
@@ -161,8 +161,59 @@ Ext.define('Contact.controller.Contacts', {
         }
     },
 
-    onFavoriteViewActivate: function(container, newActiveItem, oldActiveItem, options) {
+    onGroupListItemTap: function(dataview, index, target, record, e, options) {
+        var oldname = record.data.name;
 
+        console.log('Tapped '+oldname);
+
+        Ext.Msg.show({
+            title   : 'Edit Group',
+            msg     : null,
+            buttons : [{
+                itemId : 'delete',
+                text   : 'Delete',
+                ui     : 'decline'
+            },{
+                itemId : 'cancel',
+                text   : 'Cancel'
+            },{
+                itemId : 'ok',
+                text   : 'Ok',
+                ui     : 'confirm'
+            }],
+            prompt  : {
+                maxlength : 180,
+                autocapitalize : false, 
+                placeHolder: oldname,
+                value: oldname
+            },
+            fn      : function(button,name) {
+                if (button === 'ok') {
+                    var gs = Ext.StoreMgr.lookup('GroupStore');
+
+                    if(name) {
+                        var cc = Contact.app.getController('Contacts');
+
+                        if (cc.groupExists(oldname)) {
+
+                            var group = cc.groupExists(oldname);
+                            group.set('name', name);
+                            group.dirty = true;
+                            gs.sync();
+
+                            console.log('Updated '+name+' group');
+                        }
+                    } else {
+                        console.log('Same name');   
+                    }
+
+                } else if (button === 'delete') {
+                    console.log('Deleted '+oldname+' group');
+                } else {
+                    console.log('Canceled');
+                }
+            }
+        });
     },
 
     onTabpanelActivate: function(container, newActiveItem, oldActiveItem, options) {

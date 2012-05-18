@@ -25,8 +25,8 @@ Ext.define('Contact.view.ContactOrder', {
         items: [
             {
                 xtype: 'contactlist',
-                title: 'Alphabetical',
-                itemId: 'Alphabetical'
+                itemId: 'Alphabetical',
+                title: 'Alphabetical'
             },
             {
                 xtype: 'contactlist',

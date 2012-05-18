@@ -25,8 +25,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Alphabetical",
-                "itemId": "Alphabetical"
+                "itemId": "Alphabetical",
+                "title": "Alphabetical"
             },
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",

@@ -132,7 +132,7 @@ Ext.define('Contact.view.Form', {
                     {
                         xtype: 'selectfield',
                         itemId: 'group',
-                        label: 'Field',
+                        label: 'Group',
                         name: 'group',
                         displayField: 'name',
                         store: 'GroupStore',
