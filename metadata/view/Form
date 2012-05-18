@@ -33,7 +33,7 @@
                 "designer|userClassName": "MyToolbar"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen27280",
@@ -120,7 +120,7 @@
                 "designer|userClassName": "MyFieldSet"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen27303",
@@ -276,6 +276,26 @@
                         "name": "zipcode",
                         "readOnly": false,
                         "designer|userClassName": "MyNumberField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen31716",
+                    "type": "selectfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "group",
+                        "label": "Field",
+                        "name": "group",
+                        "displayField": "name",
+                        "store": "GroupStore",
+                        "valueField": "name",
+                        "designer|userClassName": "MySelectField"
                     },
                     "customConfigs": [],
                     "expanded": true

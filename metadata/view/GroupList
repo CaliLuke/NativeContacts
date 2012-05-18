@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "itemId": "GroupList",
         "emptyText": "No Contacts",
         "itemTpl": "<div>{name}</div>",
         "store": "GroupStore",

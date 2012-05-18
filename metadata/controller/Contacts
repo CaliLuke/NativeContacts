@@ -98,6 +98,45 @@
             "expanded": true
         },
         {
+            "id": "ExtBox1-ext-gen19458",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddGroupBtnTap",
+                "implHandler": [
+                    "Ext.Msg.prompt('Add Group',",
+                    "'Enter the group name:',",
+                    "function (button, name) {",
+                    "    if (button === 'ok') {",
+                    "        var cc = Contact.app.getController('Contacts');",
+                    "        ",
+                    "        if (!cc.groupExists(name)) {",
+                    "            var gs = Ext.StoreMgr.lookup('GroupStore');",
+                    "    ",
+                    "            gs.add({name:name});",
+                    "            ",
+                    "            console.log('Saved '+name+' group');",
+                    "        }",
+                    "        else {",
+                    "            Ext.Msg.alert(name+' group exists', 'Please enter a different name');",
+                    "        }",
+                    "        ",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#addGroupBtn",
+                "designer|userClassName": "onAddGroupBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
             "id": "ExtBox1-ext-gen34079",
             "type": "controlleraction",
             "reference": {
@@ -189,30 +228,6 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen49089",
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onContactItemTap",
-                "implHandler": [
-                    "var info = this.getContactinfo();",
-                    "info.setRecord(record);",
-                    "Ext.Viewport.setActiveItem(info);",
-                    ""
-                ],
-                "name": "itemtap",
-                "designer|targetType": "Ext.dataview.DataView",
-                "designer|controlQuery": "dataview",
-                "designer|userClassName": "onContactItemTap"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
             "id": "ExtBox1-ext-gen52208",
             "type": "controlleraction",
             "reference": {
@@ -229,6 +244,36 @@
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#infoBackBtn",
                 "designer|userClassName": "onInfoBackBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen49089",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContactListTap",
+                "implHandler": [
+                    "var active = dataview.getItemId();",
+                    "",
+                    "var items = ['ContactList', 'FavoriteView'];",
+                    "",
+                    "if (active in this.allowed(items)) {",
+                    "    var info = this.getContactinfo();",
+                    "    info.setRecord(record);",
+                    "    Ext.Viewport.setActiveItem(info);",
+                    "    console.log('Item tap on '+active);",
+                    "}"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.DataView",
+                "designer|controlQuery": "dataview",
+                "designer|userClassName": "onContactListTap"
             },
             "customConfigs": [],
             "expanded": true
@@ -302,6 +347,55 @@
                 "designer|targetType": "Ext.picker.Picker",
                 "designer|controlQuery": "contactpic",
                 "designer|userClassName": "onContactPickerChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21346",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "groupExists",
+                "designer|params": [
+                    "name"
+                ],
+                "implHandler": [
+                    "var gs = Ext.StoreMgr.lookup('GroupStore');",
+                    "",
+                    "return gs.findRecord('name', name, 0, true);"
+                ],
+                "designer|userClassName": "groupExists"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen33342",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "allowed",
+                "designer|params": [
+                    "items"
+                ],
+                "implHandler": [
+                    "var o = {};",
+                    "for(var i=0;i<items.length;i++)",
+                    "{",
+                    "    o[items[i]]='';",
+                    "}",
+                    "return o;"
+                ],
+                "designer|userClassName": "allowed"
             },
             "customConfigs": [],
             "expanded": true

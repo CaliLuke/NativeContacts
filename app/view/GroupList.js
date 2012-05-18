@@ -18,6 +18,7 @@ Ext.define('Contact.view.GroupList', {
     alias: 'widget.grouplist',
 
     config: {
+        itemId: 'GroupList',
         emptyText: 'No Contacts',
         store: 'GroupStore',
         disableSelection: true,

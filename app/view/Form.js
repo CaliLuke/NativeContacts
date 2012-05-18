@@ -128,6 +128,15 @@ Ext.define('Contact.view.Form', {
                         labelAlign: 'top',
                         name: 'zipcode',
                         readOnly: false
+                    },
+                    {
+                        xtype: 'selectfield',
+                        itemId: 'group',
+                        label: 'Field',
+                        name: 'group',
+                        displayField: 'name',
+                        store: 'GroupStore',
+                        valueField: 'name'
                     }
                 ]
             }

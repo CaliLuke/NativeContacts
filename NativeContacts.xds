@@ -125,9 +125,9 @@
     },
     "expandedState": {
         "data": true,
-        "model": true,
+        "model": false,
         "component": true,
-        "controller": false,
-        "resource": true
+        "controller": true,
+        "resource": false
     }
 }

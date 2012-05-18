@@ -42,6 +42,9 @@ Ext.define('Contact.controller.Contacts', {
             "button#addContactBtn": {
                 tap: 'onAddContactBtnTap'
             },
+            "button#addGroupBtn": {
+                tap: 'onAddGroupBtnTap'
+            },
             "button#saveContactBtn": {
                 tap: 'onSaveContactBtnTap'
             },
@@ -51,11 +54,11 @@ Ext.define('Contact.controller.Contacts', {
             "button#cancelBtn": {
                 tap: 'onCancelBtnTap'
             },
-            "dataview": {
-                itemtap: 'onContactItemTap'
-            },
             "button#infoBackBtn": {
                 tap: 'onInfoBackBtnTap'
+            },
+            "dataview": {
+                itemtap: 'onContactListTap'
             },
             "favoriteview": {
                 activate: 'onFavoriteViewActivate'
@@ -76,6 +79,28 @@ Ext.define('Contact.controller.Contacts', {
         form.reset();
         form.referrer = referrer;
         Ext.Viewport.setActiveItem(form);
+    },
+
+    onAddGroupBtnTap: function(button, e, options) {
+        Ext.Msg.prompt('Add Group',
+        'Enter the group name:',
+        function (button, name) {
+            if (button === 'ok') {
+                var cc = Contact.app.getController('Contacts');
+
+                if (!cc.groupExists(name)) {
+                    var gs = Ext.StoreMgr.lookup('GroupStore');
+
+                    gs.add({name:name});
+
+                    console.log('Saved '+name+' group');
+                }
+                else {
+                    Ext.Msg.alert(name+' group exists', 'Please enter a different name');
+                }
+
+            }
+        });
     },
 
     onSaveContactBtnTap: function(button, e, options) {
@@ -118,15 +143,21 @@ Ext.define('Contact.controller.Contacts', {
 
     },
 
-    onContactItemTap: function(dataview, index, target, record, e, options) {
-        var info = this.getContactinfo();
-        info.setRecord(record);
-        Ext.Viewport.setActiveItem(info);
-
-    },
-
     onInfoBackBtnTap: function(button, e, options) {
         Ext.Viewport.setActiveItem(0);
+    },
+
+    onContactListTap: function(dataview, index, target, record, e, options) {
+        var active = dataview.getItemId();
+
+        var items = ['ContactList', 'FavoriteView'];
+
+        if (active in this.allowed(items)) {
+            var info = this.getContactinfo();
+            info.setRecord(record);
+            Ext.Viewport.setActiveItem(info);
+            console.log('Item tap on '+active);
+        }
     },
 
     onFavoriteViewActivate: function(container, newActiveItem, oldActiveItem, options) {
@@ -149,6 +180,21 @@ Ext.define('Contact.controller.Contacts', {
             currentForm.setRecord(record);
         }
 
+    },
+
+    groupExists: function(name) {
+        var gs = Ext.StoreMgr.lookup('GroupStore');
+
+        return gs.findRecord('name', name, 0, true);
+    },
+
+    allowed: function(items) {
+        var o = {};
+        for(var i=0;i<items.length;i++)
+        {
+            o[items[i]]='';
+        }
+        return o;
     }
 
 });

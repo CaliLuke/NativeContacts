@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "itemId": "ContactList",
         "emptyText": "No Contacts",
         "itemTpl": "<div>{firstName} {lastName}</div>",
         "store": "ContactStore",

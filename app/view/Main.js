@@ -41,6 +41,7 @@ Ext.define('Contact.view.Main', {
             },
             {
                 xtype: 'grouplist',
+                preventSelectionOnDisclose: false,
                 title: 'Groups'
             },
             {
@@ -56,6 +57,15 @@ Ext.define('Contact.view.Main', {
                         iconCls: 'add',
                         iconMask: true,
                         text: 'Add Contact'
+                    },
+                    {
+                        xtype: 'button',
+                        cls: 'square',
+                        itemId: 'addGroupBtn',
+                        ui: 'action',
+                        iconCls: 'add',
+                        iconMask: true,
+                        text: 'Add Group'
                     }
                 ]
             }

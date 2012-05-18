@@ -18,6 +18,7 @@ Ext.define('Contact.view.ContactList', {
     alias: 'widget.contactlist',
 
     config: {
+        itemId: 'ContactList',
         emptyText: 'No Contacts',
         store: 'ContactStore',
         disableSelection: true,

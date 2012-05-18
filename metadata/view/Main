@@ -75,6 +75,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "preventSelectionOnDisclose": false,
                 "title": "Groups"
             },
             "customConfigs": [],
@@ -113,6 +114,26 @@
                         "iconCls": "add",
                         "iconMask": true,
                         "text": "Add Contact",
+                        "designer|userClassName": "MyButton6"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen19111",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "square",
+                        "itemId": "addGroupBtn",
+                        "ui": "action",
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": "Add Group",
                         "designer|userClassName": "MyButton6"
                     },
                     "customConfigs": [],
