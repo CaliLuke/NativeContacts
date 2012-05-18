@@ -42,6 +42,9 @@ Ext.define('Contact.controller.Contacts', {
             "button#addContactBtn": {
                 tap: 'onAddContactBtnTap'
             },
+            "button#addGroupBtn": {
+                tap: 'onAddGroupBtnTap'
+            },
             "button#saveContactBtn": {
                 tap: 'onSaveContactBtnTap'
             },
@@ -51,17 +54,18 @@ Ext.define('Contact.controller.Contacts', {
             "button#cancelBtn": {
                 tap: 'onCancelBtnTap'
             },
-            "dataview": {
-                itemtap: 'onContactItemTap'
-            },
             "button#infoBackBtn": {
                 tap: 'onInfoBackBtnTap'
             },
-            "favoriteview": {
-                activate: 'onFavoriteViewActivate'
+            "dataview": {
+                itemtap: 'onContactListTap'
             },
-            "list": {
-                activate: 'onListActivate'
+            "grouplist": {
+                itemtap: 'onGroupListItemTap'
+            },
+            "tabpanel": {
+                activate: 'onTabpanelActivate',
+                activeitemchange: 'onTabpanelActiveItemChange'
             },
             "contactpic": {
                 change: 'onContactPickerChange'
@@ -76,6 +80,29 @@ Ext.define('Contact.controller.Contacts', {
         form.reset();
         form.referrer = referrer;
         Ext.Viewport.setActiveItem(form);
+    },
+
+    onAddGroupBtnTap: function(button, e, options) {
+        Ext.Msg.prompt('Add Group',
+        'Enter the group name',
+        function (button, name) {
+            if (button === 'ok') {
+                var cc = Contact.app.getController('Contacts');
+
+                // Only add if it doesn't exist
+                if (!cc.findGroup(name)) {
+                    var gs = Ext.StoreMgr.lookup('GroupStore');
+
+                    gs.add({name:name});
+
+                    console.log('Saved '+name+' group');
+                }
+                else {
+                    Ext.Msg.alert(name+' group exists', 'Please enter a different name');
+                }
+
+            }
+        });
     },
 
     onSaveContactBtnTap: function(button, e, options) {
@@ -118,25 +145,96 @@ Ext.define('Contact.controller.Contacts', {
 
     },
 
-    onContactItemTap: function(dataview, index, target, record, e, options) {
-        var info = this.getContactinfo();
-        info.setRecord(record);
-        Ext.Viewport.setActiveItem(info);
-
-    },
-
     onInfoBackBtnTap: function(button, e, options) {
         Ext.Viewport.setActiveItem(0);
     },
 
-    onFavoriteViewActivate: function(container, newActiveItem, oldActiveItem, options) {
-        var ds = Ext.StoreManager.lookup('ContactStore');
-        ds.filter('isFavorite', true);
+    onContactListTap: function(dataview, index, target, record, e, options) {
+        var active = dataview.getItemId();
+
+        var items = ['ContactList', 'FavoriteView', 'Alphabetical', 'ByGroup'];
+
+        if (active in this.allowed(items)) {
+            var info = this.getContactinfo();
+            info.setRecord(record);
+            Ext.Viewport.setActiveItem(info);
+            console.log('Item tap on '+active);
+        }
     },
 
-    onListActivate: function(container, newActiveItem, oldActiveItem, options) {
-        var ds = Ext.StoreManager.lookup('ContactStore');
-        ds.clearFilter();
+    onGroupListItemTap: function(dataview, index, target, record, e, options) {
+        var oldname = record.data.name;            
+        var cc = Contact.app.getController('Contacts');
+
+        console.log('Tapped '+oldname);
+        if(oldname != 'Contacts') {    
+            Ext.Msg.show({
+                title   : 'Edit Group',
+                msg     : null,
+                buttons : [{
+                    itemId : 'delete',
+                    text   : 'Delete',
+                    ui     : 'decline'
+                },{
+                    itemId : 'cancel',
+                    text   : 'Cancel'
+                },{
+                    itemId : 'ok',
+                    text   : 'Ok',
+                    ui     : 'confirm'
+                }],
+                prompt  : {
+                    maxlength : 180,
+                    autocapitalize : false, 
+                    placeHolder: oldname,
+                    value: oldname
+                },
+                fn: function(button,name) {
+                    var gs = Ext.StoreMgr.lookup('GroupStore');
+                    var cs = Ext.StoreMgr.lookup('ContactStore');
+                    var group = cc.findGroup(oldname);
+
+                    if (button === 'ok') {            
+                        if(name && name != oldname) {
+                            if (cc.findGroup(oldname)) {
+
+                                group.set('name', name);
+                                group.setDirty();
+                                gs.sync();
+
+                                console.log('Updated group');
+
+                                cc.updateContactsGroup(oldname, name);
+                            }
+                        }
+                        else {
+                            console.log('Same name');   
+                        }
+
+                    } else if (button === 'delete') {
+                        gs.remove(group);
+                        gs.sync();
+
+                        // Put contacts in default Contacts group
+                        cc.updateContactsGroup(oldname, 'Contacts');
+
+                        console.log('Deleted '+oldname+' group');
+                    } else {
+                        console.log('Canceled');
+                    }
+                }
+            });
+        } else {Ext.Msg.alert('Default Group', 'The Contacts group cannot be edited or deleted');}
+    },
+
+    onTabpanelActivate: function(container, newActiveItem, oldActiveItem, options) {
+        var active = container.getActiveItem().getItemId();
+        this.modifyContactStore(active);
+    },
+
+    onTabpanelActiveItemChange: function(container, value, oldValue, options) {
+        var active = value.getItemId();
+        this.modifyContactStore(active);
     },
 
     onContactPickerChange: function(picker, value, options) {
@@ -149,6 +247,73 @@ Ext.define('Contact.controller.Contacts', {
             currentForm.setRecord(record);
         }
 
+    },
+
+    updateContactsGroup: function(oldname, newname) {
+        var contacts = this.findContactsByGroup(oldname);
+
+        // Update contacts in this group
+        if(contacts.getCount() ) {
+
+            contacts.each(function(record) {
+                record.set('group', newname);
+                record.setDirty();
+            });
+            contacts.sync();
+
+            console.log('Updated contacts in this group');
+        }
+    },
+
+    modifyContactStore: function(active) {
+        var cs = Ext.StoreMgr.lookup('ContactStore');
+
+        var alphabetical = ['Alphabetical','ContacOrder'];
+
+        if (active in this.allowed(alphabetical)) {
+            cs.setGroupField('firstName');
+            cs.sort('firstName');
+            cs.setGrouper({
+                groupFn: function(record) {
+                    return record.data.firstName[0];
+                }
+            });
+        }
+        else if (active == 'ByGroup') {
+            cs.setGroupField('group');
+            cs.sort('group');
+        }
+
+        if (active == 'FavoriteView') {
+            cs.filter('isFavorite', true);
+        }
+        else {
+            cs.clearFilter();
+        }
+
+        console.log(active+' is active');
+    },
+
+    findGroup: function(name) {
+        var gs = Ext.StoreMgr.lookup('GroupStore');
+        return gs.findRecord('name', name, 0, true);
+    },
+
+    findContactsByGroup: function(group) {
+        var cs = Ext.StoreMgr.lookup('ContactStore');
+        cs.filter('group', group);
+        return cs;
+
+
+    },
+
+    allowed: function(items) {
+        var o = {};
+        for(var i=0;i<items.length;i++)
+        {
+            o[items[i]]='';
+        }
+        return o;
     }
 
 });

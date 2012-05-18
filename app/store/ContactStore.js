@@ -25,15 +25,18 @@ Ext.define('Contact.store.ContactStore', {
         model: 'Contact.model.Contact',
         storeId: 'ContactStore',
         proxy: {
-            type: 'localstorage'
+            type: 'localstorage',
+            id: 'ContactLocalStorage'
         },
         grouper: {
             groupFn: function(record) {
                 return record.get('firstName')[0];
 
-            }
+            },
+            id: 'ContactGrouper'
         },
         sorters: {
+            id: 'ContactSorter',
             property: 'firstName'
         }
     }

@@ -26,18 +26,22 @@ Ext.application({
     ],
 
     models: [
-        'Contact'
+        'Contact',
+        'Group'
     ],
     stores: [
-        'ContactStore'
+        'ContactStore',
+        'GroupStore'
     ],
     views: [
         'Main',
         'Info',
         'Form',
         'Picture',
-        'List',
-        'FavoriteView'
+        'ContactList',
+        'FavoriteView',
+        'GroupList',
+        'ContactOrder'
     ],
     name: 'Contact',
     controllers: [
@@ -52,36 +56,74 @@ Ext.application({
         Ext.util.Format.undef = function(value, defaultValue) {
             return Ext.isDefined(value) ? value : defaultValue;
         };
-        var ds = Ext.StoreMgr.lookup('ContactStore');
-        if (!ds.getCount()) {
+        var cs = Ext.StoreMgr.lookup('ContactStore');
+        var gs = Ext.StoreMgr.lookup('GroupStore');
+        if (!cs.getCount() || !gs.getCount()) {
             Ext.Msg.alert('Intro', 'Setting up default database.');
-            ds.add({
+            // Add demo contacts
+            cs.add({
                 firstName: 'Aaron',
                 lastName: 'Conran',
                 emailAddress: 'aaron@sencha.com',
-                phoneNumber: '443-555-1234'
+                phoneNumber: '443-555-1234',
+                group: 'Sencha'
             });
-            ds.add({
+            cs.add({
                 firstName: 'Aditya',
                 lastName: 'Bansod',
-                phoneNumber: '555-555-1234'
+                phoneNumber: '555-555-1234',
+                group: 'Sencha'
             });
-            ds.add({
+            cs.add({
                 firstName: 'Luca',
                 lastName: 'Candela',
-                phoneNumber: '555-555-1234'
+                phoneNumber: '555-555-1234',
+                group: 'Sencha'
             });
-            ds.add({
+            cs.add({
                 firstName: 'Tommy',
                 lastName: 'Maintz',
                 isFavorite: true,
-                phoneNumber: '717-555-1234'
+                phoneNumber: '717-555-1234',
+                group: 'Sencha'
             });
-            ds.add({
+            cs.add({
                 firstName: 'Nige',
                 lastName: '(Animal) White',
                 isFavorite: true,
-                phoneNumber: '555-555-1234'
+                phoneNumber: '555-555-1234',
+                group: 'Sencha'
+            });
+            cs.add({
+                firstName: 'Osvaldo',
+                lastName: 'Brignoni',
+                phoneNumber: '555-555-1234',
+                group: 'Github'
+            });
+            cs.add({
+                firstName: 'Tom',
+                lastName: 'Hanks',
+                phoneNumber: '555-555-1234',
+                group: 'Movie Stars'
+            });
+            cs.add({
+                firstName: 'Julia',
+                lastName: 'Roberts',
+                phoneNumber: '555-555-1234',
+                group: 'Movie Stars'
+            });
+            //Add demo groups
+            gs.add({
+                name: 'Contacts' // Default group
+            });
+            gs.add({
+                name: 'Github'
+            });
+            gs.add({
+                name: 'Movie Stars'
+            });
+            gs.add({
+                name: 'Sencha'
             });
         }
         Ext.create('Contact.view.Main', {fullscreen: true});

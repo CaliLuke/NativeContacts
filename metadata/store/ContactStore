@@ -27,6 +27,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "ContactLocalStorage",
                 "designer|userClassName": "MyLocalStorageProxy"
             },
             "customConfigs": [],
@@ -41,6 +42,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "ContactGrouper",
                 "designer|userClassName": "MyGrouper"
             },
             "customConfigs": [],
@@ -59,7 +61,10 @@
                         "designer|params": [
                             "record"
                         ],
-                        "implHandler": "return record.get('firstName')[0];\n",
+                        "implHandler": [
+                            "return record.get('firstName')[0];",
+                            ""
+                        ],
                         "designer|userClassName": "groupFn"
                     },
                     "customConfigs": [],
@@ -77,6 +82,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "ContactSorter",
                 "property": "firstName",
                 "designer|userClassName": "MySorter"
             },

@@ -26,6 +26,7 @@ Ext.define('Contact.view.Info', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
+                itemId: 'InfoToolbar',
                 items: [
                     {
                         xtype: 'button',
@@ -57,39 +58,46 @@ Ext.define('Contact.view.Info', {
                 ]
             },
             {
-                xtype: 'contactpic'
+                xtype: 'contactpic',
+                id: 'InfoPicture'
             },
             {
-                xtype: 'textfield',
-                disabled: true,
-                itemId: 'phoneNumber',
-                clearIcon: false,
-                label: 'Phone Number',
-                labelAlign: 'top',
-                name: 'phoneNumber',
-                readOnly: true
-            },
-            {
-                xtype: 'textfield',
-                disabled: true,
-                itemId: 'emailAddress',
-                clearIcon: false,
-                label: 'Email Address',
-                labelAlign: 'top',
-                name: 'emailAddress',
-                placeHolder: 'Email address not provided',
-                readOnly: true
-            },
-            {
-                xtype: 'textfield',
-                disabled: true,
-                id: 'address',
-                clearIcon: false,
-                label: 'Address',
-                labelAlign: 'top',
-                name: 'address',
-                placeHolder: 'Address not provided',
-                readOnly: true
+                xtype: 'fieldset',
+                title: 'Contact Info',
+                items: [
+                    {
+                        xtype: 'textfield',
+                        disabled: true,
+                        itemId: 'phoneNumber',
+                        clearIcon: false,
+                        label: 'Phone Number',
+                        labelAlign: 'top',
+                        name: 'phoneNumber',
+                        readOnly: true
+                    },
+                    {
+                        xtype: 'textfield',
+                        disabled: true,
+                        itemId: 'emailAddress',
+                        clearIcon: false,
+                        label: 'Email Address',
+                        labelAlign: 'top',
+                        name: 'emailAddress',
+                        placeHolder: 'Email address not provided',
+                        readOnly: true
+                    },
+                    {
+                        xtype: 'textfield',
+                        disabled: true,
+                        id: 'address',
+                        clearIcon: false,
+                        label: 'Address',
+                        labelAlign: 'top',
+                        name: 'address',
+                        placeHolder: 'Address not provided',
+                        readOnly: true
+                    }
+                ]
             }
         ],
         listeners: [

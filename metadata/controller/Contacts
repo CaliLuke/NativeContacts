@@ -81,11 +81,58 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onAddContactBtnTap",
-                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nform.setRecord(null);\nform.reset();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);",
+                "implHandler": [
+                    "var referrer = Ext.Viewport.getActiveItem();",
+                    "var form = this.getContactform();",
+                    "form.setRecord(null);",
+                    "form.reset();",
+                    "form.referrer = referrer;",
+                    "Ext.Viewport.setActiveItem(form);"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#addContactBtn",
                 "designer|userClassName": "onAddContactBtnTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19458",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddGroupBtnTap",
+                "implHandler": [
+                    "Ext.Msg.prompt('Add Group',",
+                    "'Enter the group name',",
+                    "function (button, name) {",
+                    "    if (button === 'ok') {",
+                    "        var cc = Contact.app.getController('Contacts');",
+                    "        ",
+                    "        // Only add if it doesn't exist",
+                    "        if (!cc.findGroup(name)) {",
+                    "            var gs = Ext.StoreMgr.lookup('GroupStore');",
+                    "",
+                    "            gs.add({name:name});",
+                    "",
+                    "            console.log('Saved '+name+' group');",
+                    "        }",
+                    "        else {",
+                    "            Ext.Msg.alert(name+' group exists', 'Please enter a different name');",
+                    "        }",
+                    "",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#addGroupBtn",
+                "designer|userClassName": "onAddGroupBtnTap"
             },
             "customConfigs": [],
             "expanded": true
@@ -100,7 +147,29 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onSaveContactBtnTap",
-                "implHandler": "var form = this.getContactform();\nvar errors = form.getValidationErrors();\n\nif (errors.length) {\n    Ext.Msg.alert('Error', errors.join('<br/>'));\n} else {\n    var values = form.getValues();\n    var record = form.getRecord();\n    if (record) {\n        record.setData(values);\n        record.commit();\n        if (form.referrer.setInfo) {\n            form.referrer.setInfo(record);\n        }\n    } else {\n        Ext.StoreManager.lookup('ContactStore').add(values);\n    }\n    Ext.Viewport.setActiveItem(form.referrer);\n    delete form.referrer;\n}\n",
+                "implHandler": [
+                    "var form = this.getContactform();",
+                    "var errors = form.getValidationErrors();",
+                    "",
+                    "if (errors.length) {",
+                    "    Ext.Msg.alert('Error', errors.join('<br/>'));",
+                    "} else {",
+                    "    var values = form.getValues();",
+                    "    var record = form.getRecord();",
+                    "    if (record) {",
+                    "        record.setData(values);",
+                    "        record.commit();",
+                    "        if (form.referrer.setInfo) {",
+                    "            form.referrer.setInfo(record);",
+                    "        }",
+                    "    } else {",
+                    "        Ext.StoreManager.lookup('ContactStore').add(values);",
+                    "    }",
+                    "    Ext.Viewport.setActiveItem(form.referrer);",
+                    "    delete form.referrer;",
+                    "}",
+                    ""
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#saveContactBtn",
@@ -119,7 +188,14 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onEditContactBtnTap",
-                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nvar info = this.getContactinfo();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);\nform.setRecord(info.getRecord());",
+                "implHandler": [
+                    "var referrer = Ext.Viewport.getActiveItem();",
+                    "var form = this.getContactform();",
+                    "var info = this.getContactinfo();",
+                    "form.referrer = referrer;",
+                    "Ext.Viewport.setActiveItem(form);",
+                    "form.setRecord(info.getRecord());"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#editContactBtn",
@@ -138,30 +214,16 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onCancelBtnTap",
-                "implHandler": "var form = this.getContactform();\nExt.Viewport.setActiveItem(form.referrer);\ndelete form.referrer;\n",
+                "implHandler": [
+                    "var form = this.getContactform();",
+                    "Ext.Viewport.setActiveItem(form.referrer);",
+                    "delete form.referrer;",
+                    ""
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#cancelBtn",
                 "designer|userClassName": "onCancelBtnTap"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen49089",
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onContactItemTap",
-                "implHandler": "var info = this.getContactinfo();\ninfo.setRecord(record);\nExt.Viewport.setActiveItem(info);\n",
-                "name": "itemtap",
-                "designer|targetType": "Ext.dataview.DataView",
-                "designer|controlQuery": "dataview",
-                "designer|userClassName": "onContactItemTap"
             },
             "customConfigs": [],
             "expanded": true
@@ -176,7 +238,9 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onInfoBackBtnTap",
-                "implHandler": "Ext.Viewport.setActiveItem(0);",
+                "implHandler": [
+                    "Ext.Viewport.setActiveItem(0);"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#infoBackBtn",
@@ -186,7 +250,7 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen70386",
+            "id": "ExtBox1-ext-gen49089",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -194,12 +258,105 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onFavoriteViewActivate",
-                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.filter('isFavorite', true);",
-                "name": "activate",
+                "fn": "onContactListTap",
+                "implHandler": [
+                    "var active = dataview.getItemId();",
+                    "",
+                    "var items = ['ContactList', 'FavoriteView', 'Alphabetical', 'ByGroup'];",
+                    "",
+                    "if (active in this.allowed(items)) {",
+                    "    var info = this.getContactinfo();",
+                    "    info.setRecord(record);",
+                    "    Ext.Viewport.setActiveItem(info);",
+                    "    console.log('Item tap on '+active);",
+                    "}"
+                ],
+                "name": "itemtap",
                 "designer|targetType": "Ext.dataview.DataView",
-                "designer|controlQuery": "favoriteview",
-                "designer|userClassName": "onFavoriteViewActivate"
+                "designer|controlQuery": "dataview",
+                "designer|userClassName": "onContactListTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen28359",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGroupListItemTap",
+                "implHandler": [
+                    "var oldname = record.data.name;            ",
+                    "var cc = Contact.app.getController('Contacts');",
+                    "",
+                    "console.log('Tapped '+oldname);",
+                    "if(oldname != 'Contacts') {    ",
+                    "    Ext.Msg.show({",
+                    "        title   : 'Edit Group',",
+                    "        msg     : null,",
+                    "        buttons : [{",
+                    "            itemId : 'delete',",
+                    "            text   : 'Delete',",
+                    "            ui     : 'decline'",
+                    "        },{",
+                    "            itemId : 'cancel',",
+                    "            text   : 'Cancel'",
+                    "        },{",
+                    "            itemId : 'ok',",
+                    "            text   : 'Ok',",
+                    "            ui     : 'confirm'",
+                    "        }],",
+                    "        prompt  : {",
+                    "            maxlength : 180,",
+                    "            autocapitalize : false, ",
+                    "            placeHolder: oldname,",
+                    "            value: oldname",
+                    "        },",
+                    "        fn: function(button,name) {",
+                    "            var gs = Ext.StoreMgr.lookup('GroupStore');",
+                    "            var cs = Ext.StoreMgr.lookup('ContactStore');",
+                    "            var group = cc.findGroup(oldname);",
+                    "",
+                    "            if (button === 'ok') {            ",
+                    "                if(name && name != oldname) {",
+                    "                    if (cc.findGroup(oldname)) {",
+                    "",
+                    "                        group.set('name', name);",
+                    "                        group.setDirty();",
+                    "                        gs.sync();",
+                    "",
+                    "                        console.log('Updated group');",
+                    "",
+                    "                        cc.updateContactsGroup(oldname, name);",
+                    "                    }",
+                    "                }",
+                    "                else {",
+                    "                    console.log('Same name');   ",
+                    "                }",
+                    "",
+                    "            } else if (button === 'delete') {",
+                    "                gs.remove(group);",
+                    "                gs.sync();",
+                    "                ",
+                    "                // Put contacts in default Contacts group",
+                    "                cc.updateContactsGroup(oldname, 'Contacts');",
+                    "                ",
+                    "                console.log('Deleted '+oldname+' group');",
+                    "            } else {",
+                    "                console.log('Canceled');",
+                    "            }",
+                    "        }",
+                    "    });",
+                    "} else {Ext.Msg.alert('Default Group', 'The Contacts group cannot be edited or deleted');}"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "GroupList",
+                "designer|controlQuery": "grouplist",
+                "designer|userClassName": "onGroupListItemTap"
             },
             "customConfigs": [],
             "expanded": true
@@ -213,12 +370,37 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onListActivate",
-                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.clearFilter();",
+                "fn": "onTabpanelActivate",
+                "implHandler": [
+                    "var active = container.getActiveItem().getItemId();",
+                    "this.modifyContactStore(active);"
+                ],
                 "name": "activate",
-                "designer|targetType": "Ext.dataview.List",
-                "designer|controlQuery": "list",
-                "designer|userClassName": "onListActivate"
+                "designer|targetType": "Ext.tab.Panel",
+                "designer|controlQuery": "tabpanel",
+                "designer|userClassName": "onTabpanelActivate"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17565",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabpanelActiveItemChange",
+                "implHandler": [
+                    "var active = value.getItemId();",
+                    "this.modifyContactStore(active);"
+                ],
+                "name": "activeitemchange",
+                "designer|targetType": "Ext.tab.Panel",
+                "designer|controlQuery": "tabpanel",
+                "designer|userClassName": "onTabpanelActiveItemChange"
             },
             "customConfigs": [],
             "expanded": true
@@ -233,11 +415,174 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onContactPickerChange",
-                "implHandler": "var currentForm = Ext.Viewport.getActiveItem();\nvar record = currentForm.getRecord();\nif (record) {\n    Ext.Msg.alert('pic', 'setting pic to ' + value);\n    record.set('picture', value);\n    record.commit();\n    currentForm.setRecord(record);\n}\n",
+                "implHandler": [
+                    "var currentForm = Ext.Viewport.getActiveItem();",
+                    "var record = currentForm.getRecord();",
+                    "if (record) {",
+                    "    Ext.Msg.alert('pic', 'setting pic to ' + value);",
+                    "    record.set('picture', value);",
+                    "    record.commit();",
+                    "    currentForm.setRecord(record);",
+                    "}",
+                    ""
+                ],
                 "name": "change",
                 "designer|targetType": "Ext.picker.Picker",
                 "designer|controlQuery": "contactpic",
                 "designer|userClassName": "onContactPickerChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen36296",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateContactsGroup",
+                "designer|params": [
+                    "oldname",
+                    "newname"
+                ],
+                "implHandler": [
+                    "var contacts = this.findContactsByGroup(oldname);",
+                    "",
+                    "// Update contacts in this group",
+                    "if(contacts.getCount() ) {",
+                    "",
+                    "    contacts.each(function(record) {",
+                    "        record.set('group', newname);",
+                    "        record.setDirty();",
+                    "    });",
+                    "    contacts.sync();",
+                    "",
+                    "    console.log('Updated contacts in this group');",
+                    "}"
+                ],
+                "designer|userClassName": "updateContactsGroup"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12129",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "modifyContactStore",
+                "designer|params": [
+                    "active"
+                ],
+                "implHandler": [
+                    "var cs = Ext.StoreMgr.lookup('ContactStore');",
+                    "",
+                    "var alphabetical = ['Alphabetical','ContacOrder'];",
+                    "",
+                    "if (active in this.allowed(alphabetical)) {",
+                    "    cs.setGroupField('firstName');",
+                    "    cs.sort('firstName');",
+                    "    cs.setGrouper({",
+                    "        groupFn: function(record) {",
+                    "            return record.data.firstName[0];",
+                    "        }",
+                    "    });",
+                    "}",
+                    "else if (active == 'ByGroup') {",
+                    "    cs.setGroupField('group');",
+                    "    cs.sort('group');",
+                    "}",
+                    "",
+                    "if (active == 'FavoriteView') {",
+                    "    cs.filter('isFavorite', true);",
+                    "}",
+                    "else {",
+                    "    cs.clearFilter();",
+                    "}",
+                    "",
+                    "console.log(active+' is active');"
+                ],
+                "designer|userClassName": "modifyContactStore"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21346",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "findGroup",
+                "designer|params": [
+                    "name"
+                ],
+                "implHandler": [
+                    "var gs = Ext.StoreMgr.lookup('GroupStore');",
+                    "return gs.findRecord('name', name, 0, true);"
+                ],
+                "designer|userClassName": "findGroup"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen15306",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "findContactsByGroup",
+                "designer|params": [
+                    "group"
+                ],
+                "implHandler": [
+                    "var cs = Ext.StoreMgr.lookup('ContactStore');",
+                    "cs.filter('group', group);",
+                    "return cs;",
+                    "",
+                    ""
+                ],
+                "designer|userClassName": "findContactsByGroup"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen33342",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "allowed",
+                "designer|params": [
+                    "items"
+                ],
+                "implHandler": [
+                    "var o = {};",
+                    "for(var i=0;i<items.length;i++)",
+                    "{",
+                    "    o[items[i]]='';",
+                    "}",
+                    "return o;"
+                ],
+                "designer|userClassName": "allowed"
             },
             "customConfigs": [],
             "expanded": true
