@@ -86,7 +86,8 @@ Ext.define('Contact.controller.Contacts', {
         Ext.Msg.prompt('Add Group',
         'Enter the group name',
         function (button, name) {
-            if (button === 'ok') {
+            if (button === 'ok' && name !== '') {
+
                 var cc = Contact.app.getController('Contacts');
 
                 // Only add if it doesn't exist
@@ -102,7 +103,7 @@ Ext.define('Contact.controller.Contacts', {
                 }
 
             }
-        });
+        }, this, false, null, {placeHolder: ''}); // Reset
     },
 
     onSaveContactBtnTap: function(button, e, options) {
