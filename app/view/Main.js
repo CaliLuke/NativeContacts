@@ -16,7 +16,7 @@
 Ext.define('Contact.view.Main', {
     extend: 'Ext.tab.Panel',
     requires: [
-        'Contact.view.List',
+        'Contact.view.ContactList',
         'Contact.view.FavoriteView'
     ],
 

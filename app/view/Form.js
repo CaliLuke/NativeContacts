@@ -28,6 +28,7 @@ Ext.define('Contact.view.Form', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
+                itemId: 'FormToolbar',
                 items: [
                     {
                         xtype: 'button',
@@ -51,77 +52,84 @@ Ext.define('Contact.view.Form', {
                 ]
             },
             {
-                xtype: 'contactpic'
+                xtype: 'contactpic',
+                itemId: 'FormPicture'
             },
             {
-                xtype: 'textfield',
-                itemId: 'firstName',
-                margin: '10px 0 0 0',
-                label: 'First Name',
-                labelAlign: 'top',
-                name: 'firstName',
-                required: true,
-                readOnly: false
-            },
-            {
-                xtype: 'textfield',
-                itemId: 'lastName',
-                label: 'Last Name',
-                labelAlign: 'top',
-                name: 'lastName',
-                readOnly: false
-            },
-            {
-                xtype: 'textfield',
-                itemId: 'phoneNumber',
-                label: 'Phone Number',
-                labelAlign: 'top',
-                name: 'phoneNumber',
-                required: true,
-                readOnly: false
-            },
-            {
-                xtype: 'emailfield',
-                itemId: 'emailAddress',
-                label: 'Email Address',
-                labelAlign: 'top',
-                name: 'emailAddress',
-                placeHolder: 'email@example.com',
-                readOnly: false
-            },
-            {
-                xtype: 'textfield',
-                itemId: 'address',
-                label: 'Address',
-                labelAlign: 'top',
-                name: 'address',
-                readOnly: false
-            },
-            {
-                xtype: 'textfield',
-                itemId: 'city',
-                label: 'City',
-                labelAlign: 'top',
-                name: 'city',
-                readOnly: false
-            },
-            {
-                xtype: 'textfield',
-                id: 'state',
-                itemId: 'address',
-                label: 'State',
-                labelAlign: 'top',
-                name: 'city',
-                readOnly: false
-            },
-            {
-                xtype: 'numberfield',
-                id: 'zipcode',
-                itemId: 'address',
-                label: 'Zipcode',
-                labelAlign: 'top',
-                name: 'zipcode',
-                readOnly: false
+                xtype: 'fieldset',
+                title: 'Contact Info',
+                items: [
+                    {
+                        xtype: 'textfield',
+                        itemId: 'firstName',
+                        margin: '10px 0 0 0',
+                        label: 'First Name',
+                        labelAlign: 'top',
+                        name: 'firstName',
+                        required: true,
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'textfield',
+                        itemId: 'lastName',
+                        label: 'Last Name',
+                        labelAlign: 'top',
+                        name: 'lastName',
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'textfield',
+                        itemId: 'phoneNumber',
+                        label: 'Phone Number',
+                        labelAlign: 'top',
+                        name: 'phoneNumber',
+                        required: true,
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'emailfield',
+                        itemId: 'emailAddress',
+                        label: 'Email Address',
+                        labelAlign: 'top',
+                        name: 'emailAddress',
+                        placeHolder: 'email@example.com',
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'textfield',
+                        itemId: 'address',
+                        label: 'Address',
+                        labelAlign: 'top',
+                        name: 'address',
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'textfield',
+                        itemId: 'city',
+                        label: 'City',
+                        labelAlign: 'top',
+                        name: 'city',
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'textfield',
+                        id: 'state',
+                        itemId: 'address',
+                        label: 'State',
+                        labelAlign: 'top',
+                        name: 'city',
+                        readOnly: false
+                    },
+                    {
+                        xtype: 'numberfield',
+                        id: 'zipcode',
+                        itemId: 'address',
+                        label: 'Zipcode',
+                        labelAlign: 'top',
+                        name: 'zipcode',
+                        readOnly: false
+                    }
+                ]
             }
         ]
     },

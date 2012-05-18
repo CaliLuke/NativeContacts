@@ -38,7 +38,7 @@ Ext.application({
         'Info',
         'Form',
         'Picture',
-        'List',
+        'ContactList',
         'FavoriteView'
     ],
     name: 'Contact',

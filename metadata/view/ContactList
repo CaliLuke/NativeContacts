@@ -12,7 +12,7 @@
         "store": "ContactStore",
         "disableSelection": true,
         "grouped": true,
-        "designer|userClassName": "List",
+        "designer|userClassName": "ContactList",
         "designer|userAlias": "contactlist"
     },
     "customConfigs": [],

@@ -20,7 +20,7 @@
             "Info",
             "Form",
             "Picture",
-            "List",
+            "ContactList",
             "FavoriteView"
         ],
         "name": "Contact",

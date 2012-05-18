@@ -54,11 +54,11 @@
         },
         "5b610c64-3053-4d2f-8bfb-77077b9b2217": {
             "paths": [
-                "metadata/view/List",
-                "app/view/override/List.js",
-                "app/view/List.js"
+                "metadata/view/ContactList",
+                "app/view/override/ContactList.js",
+                "app/view/ContactList.js"
             ],
-            "className": "List"
+            "className": "ContactList"
         },
         "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b": {
             "paths": [
