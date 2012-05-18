@@ -1,0 +1,54 @@
+{
+    "id": "ExtBox1-ext-gen19292",
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "ContactOrder",
+        "designer|userClassName": "ContactOrder",
+        "designer|userAlias": "contactorder"
+    },
+    "customConfigs": [],
+    "designerId": "6697b8a2-4f39-4375-8657-efca5da12d58",
+    "$viewOrder": 7,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen20851",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "Alphabetical",
+                "title": "Alphabetical"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen2950"
+        },
+        {
+            "id": "ExtBox1-ext-gen21971",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "ByGroup",
+                "title": "By Group"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen2950"
+        }
+    ]
+}

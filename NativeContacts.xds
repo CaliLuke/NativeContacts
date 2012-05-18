@@ -1,12 +1,11 @@
 {
     "name": "NativeContacts",
     "settings": {
-        "urlPrefix": "http://localhost/~luca/NativeContacts/",
-        "directAPI": "",
+        "urlPrefix": "http://contacts.dev",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "exportPath": "/Users/luca/Sites/NativeDeploy",
-        "extPath": "http://localhost/~luca/st2/",
+        "extPath": "http://sencha.dev/st2/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
         "lineEnding": "LF",
@@ -14,10 +13,11 @@
         "genTimestamps": false,
         "saveOnDeploy": false,
         "appName": "MyApp",
-        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true"
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "directAPI": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "423",
+    "xdsBuild": "442",
     "framework": "touch20",
     "topInstanceFileMap": {
         "ab0ebc18-fc5b-43b1-8958-7395bd191769": {
@@ -54,11 +54,11 @@
         },
         "5b610c64-3053-4d2f-8bfb-77077b9b2217": {
             "paths": [
-                "metadata/view/List",
-                "app/view/override/List.js",
-                "app/view/List.js"
+                "metadata/view/ContactList",
+                "app/view/override/ContactList.js",
+                "app/view/ContactList.js"
             ],
-            "className": "List"
+            "className": "ContactList"
         },
         "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b": {
             "paths": [
@@ -97,13 +97,45 @@
                 "metadata/resource/css"
             ],
             "className": "css"
+        },
+        "9b7bdf33-2485-41b5-a520-7cd2e406f047": {
+            "paths": [
+                "metadata/store/GroupStore",
+                "app/store/override/GroupStore.js",
+                "app/store/GroupStore.js"
+            ],
+            "className": "GroupStore"
+        },
+        "f196928e-6f45-409d-88a6-68cff0eaebe2": {
+            "paths": [
+                "metadata/model/Group",
+                "app/model/override/Group.js",
+                "app/model/Group.js"
+            ],
+            "className": "Group"
+        },
+        "bc1e5473-2500-47e3-9491-8cf957b6a6cd": {
+            "paths": [
+                "metadata/view/GroupList",
+                "app/view/override/GroupList.js",
+                "app/view/GroupList.js"
+            ],
+            "className": "GroupList"
+        },
+        "6697b8a2-4f39-4375-8657-efca5da12d58": {
+            "paths": [
+                "metadata/view/ContactOrder",
+                "app/view/override/ContactOrder.js",
+                "app/view/ContactOrder.js"
+            ],
+            "className": "ContactOrder"
         }
     },
     "expandedState": {
-        "data": true,
-        "model": false,
+        "data": false,
+        "model": true,
         "component": true,
         "controller": true,
-        "resource": true
+        "resource": false
     }
 }

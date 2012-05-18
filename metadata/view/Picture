@@ -83,7 +83,20 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onMybuttonTap",
-                        "implHandler": "Ext.device.Camera.capture({\n    source: 'camera',\n    destination: 'file',\n\n    success: function(url) {\n        this.fireEvent('change', this, url);\n    },\n    failure: function() {\n        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\n    },\n    scope: this\n});",
+                        "implHandler": [
+                            "Ext.device.Camera.capture({",
+                            "    source: 'camera',",
+                            "    destination: 'file',",
+                            "",
+                            "    success: function(url) {",
+                            "        this.fireEvent('change', this, url);",
+                            "    },",
+                            "    failure: function() {",
+                            "        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');",
+                            "    },",
+                            "    scope: this",
+                            "});"
+                        ],
                         "name": "tap",
                         "designer|userClassName": "onMybuttonTap"
                     },

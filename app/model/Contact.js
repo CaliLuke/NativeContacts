@@ -56,6 +56,10 @@ Ext.define('Contact.model.Contact', {
             {
                 name: 'isFavorite',
                 type: 'boolean'
+            },
+            {
+                name: 'group',
+                type: 'string'
             }
         ]
     }

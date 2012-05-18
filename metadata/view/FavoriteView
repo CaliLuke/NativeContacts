@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "itemId": "FavoriteView",
         "scrollable": "horizontal",
         "emptyText": "No Favorite Contacts",
         "inline": "true",
@@ -17,6 +18,6 @@
     },
     "customConfigs": [],
     "designerId": "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b",
-    "$viewOrder": 5,
+    "$viewOrder": 6,
     "expanded": true
 }

@@ -26,6 +26,7 @@
             "userConfig": {
                 "border": "",
                 "docked": "top",
+                "itemId": null,
                 "designer|userClassName": "MyTabBar",
                 "container|pack": "center"
             },
@@ -34,7 +35,7 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen11622",
+            "id": "ExtBox1-ext-gen22993",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -47,7 +48,7 @@
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",
             "expanded": true,
-            "masterInstanceId": "ExtBox1-ext-gen2950"
+            "masterInstanceId": "ExtBox1-ext-gen19292"
         },
         {
             "id": "ExtBox1-ext-gen12883",
@@ -66,6 +67,23 @@
             "masterInstanceId": "ExtBox1-ext-gen4991"
         },
         {
+            "id": "ExtBox1-ext-gen16628",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "preventSelectionOnDisclose": false,
+                "title": "Groups"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen15934"
+        },
+        {
             "id": "ExtBox1-ext-gen22882",
             "type": "toolbar",
             "reference": {
@@ -75,10 +93,11 @@
             "codeClass": null,
             "userConfig": {
                 "docked": "bottom",
+                "itemId": "MainToolbar",
                 "designer|userClassName": "MyToolbar2"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen23068",
@@ -95,6 +114,26 @@
                         "iconCls": "add",
                         "iconMask": true,
                         "text": "Add Contact",
+                        "designer|userClassName": "MyButton6"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen19111",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": "square",
+                        "itemId": "addGroupBtn",
+                        "ui": "action",
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": "Add Group",
                         "designer|userClassName": "MyButton6"
                     },
                     "customConfigs": [],
