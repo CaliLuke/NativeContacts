@@ -63,8 +63,9 @@ Ext.define('Contact.controller.Contacts', {
             "favoriteview": {
                 activate: 'onFavoriteViewActivate'
             },
-            "list": {
-                activate: 'onListActivate'
+            "tabpanel": {
+                activate: 'onTabpanelActivate',
+                activeitemchange: 'onTabpanelActiveItemChange'
             },
             "contactpic": {
                 change: 'onContactPickerChange'
@@ -161,13 +162,17 @@ Ext.define('Contact.controller.Contacts', {
     },
 
     onFavoriteViewActivate: function(container, newActiveItem, oldActiveItem, options) {
-        var ds = Ext.StoreManager.lookup('ContactStore');
-        ds.filter('isFavorite', true);
+
     },
 
-    onListActivate: function(container, newActiveItem, oldActiveItem, options) {
-        var ds = Ext.StoreManager.lookup('ContactStore');
-        ds.clearFilter();
+    onTabpanelActivate: function(container, newActiveItem, oldActiveItem, options) {
+        var active = container.getActiveItem().getItemId();
+        this.modifyContactStore(active);
+    },
+
+    onTabpanelActiveItemChange: function(container, value, oldValue, options) {
+        var active = value.getItemId();
+        this.modifyContactStore(active);
     },
 
     onContactPickerChange: function(picker, value, options) {
@@ -180,6 +185,35 @@ Ext.define('Contact.controller.Contacts', {
             currentForm.setRecord(record);
         }
 
+    },
+
+    modifyContactStore: function(active) {
+        var cs = Ext.StoreMgr.lookup('ContactStore');
+
+        var alphabetical = ['Alphabetical','ContacOrder'];
+
+        if (active in this.allowed(alphabetical)) {
+            cs.setGroupField('firstName');
+            cs.sort('firstName');
+            cs.setGrouper({
+                groupFn: function(record) {
+                    return record.data.firstName[0];
+                }
+            });
+        }
+        else if (active == 'ByGroup') {
+            cs.setGroupField('group');
+            cs.sort('group');
+        }
+
+        if (active == 'FavoriteView') {
+            cs.filter('isFavorite', true);
+        }
+        else {
+            cs.clearFilter();
+        }
+
+        console.log(active+' is active');
     },
 
     groupExists: function(name) {

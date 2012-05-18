@@ -16,7 +16,7 @@
 Ext.define('Contact.view.Main', {
     extend: 'Ext.tab.Panel',
     requires: [
-        'Contact.view.ContactList',
+        'Contact.view.ContactOrder',
         'Contact.view.FavoriteView',
         'Contact.view.GroupList'
     ],
@@ -32,7 +32,7 @@ Ext.define('Contact.view.Main', {
         },
         items: [
             {
-                xtype: 'contactlist',
+                xtype: 'contactorder',
                 title: 'Contacts'
             },
             {

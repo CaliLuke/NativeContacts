@@ -289,8 +289,7 @@
             "userConfig": {
                 "fn": "onFavoriteViewActivate",
                 "implHandler": [
-                    "var ds = Ext.StoreManager.lookup('ContactStore');",
-                    "ds.filter('isFavorite', true);"
+                    ""
                 ],
                 "name": "activate",
                 "designer|targetType": "Ext.dataview.DataView",
@@ -309,15 +308,37 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onListActivate",
+                "fn": "onTabpanelActivate",
                 "implHandler": [
-                    "var ds = Ext.StoreManager.lookup('ContactStore');",
-                    "ds.clearFilter();"
+                    "var active = container.getActiveItem().getItemId();",
+                    "this.modifyContactStore(active);"
                 ],
                 "name": "activate",
-                "designer|targetType": "Ext.dataview.List",
-                "designer|controlQuery": "list",
-                "designer|userClassName": "onListActivate"
+                "designer|targetType": "Ext.tab.Panel",
+                "designer|controlQuery": "tabpanel",
+                "designer|userClassName": "onTabpanelActivate"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17565",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabpanelActiveItemChange",
+                "implHandler": [
+                    "var active = value.getItemId();",
+                    "this.modifyContactStore(active);"
+                ],
+                "name": "activeitemchange",
+                "designer|targetType": "Ext.tab.Panel",
+                "designer|controlQuery": "tabpanel",
+                "designer|userClassName": "onTabpanelActiveItemChange"
             },
             "customConfigs": [],
             "expanded": true
@@ -347,6 +368,52 @@
                 "designer|targetType": "Ext.picker.Picker",
                 "designer|controlQuery": "contactpic",
                 "designer|userClassName": "onContactPickerChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12129",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "modifyContactStore",
+                "designer|params": [
+                    "active"
+                ],
+                "implHandler": [
+                    "var cs = Ext.StoreMgr.lookup('ContactStore');",
+                    "",
+                    "var alphabetical = ['Alphabetical','ContacOrder'];",
+                    "",
+                    "if (active in this.allowed(alphabetical)) {",
+                    "    cs.setGroupField('firstName');",
+                    "    cs.sort('firstName');",
+                    "    cs.setGrouper({",
+                    "        groupFn: function(record) {",
+                    "            return record.data.firstName[0];",
+                    "        }",
+                    "    });",
+                    "}",
+                    "else if (active == 'ByGroup') {",
+                    "    cs.setGroupField('group');",
+                    "    cs.sort('group');",
+                    "}",
+                    "",
+                    "if (active == 'FavoriteView') {",
+                    "    cs.filter('isFavorite', true);",
+                    "}",
+                    "else {",
+                    "    cs.clearFilter();",
+                    "}",
+                    "",
+                    "console.log(active+' is active');"
+                ],
+                "designer|userClassName": "modifyContactStore"
             },
             "customConfigs": [],
             "expanded": true

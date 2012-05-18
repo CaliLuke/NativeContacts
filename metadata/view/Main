@@ -35,7 +35,7 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen11622",
+            "id": "ExtBox1-ext-gen22993",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -48,7 +48,7 @@
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",
             "expanded": true,
-            "masterInstanceId": "ExtBox1-ext-gen2950"
+            "masterInstanceId": "ExtBox1-ext-gen19292"
         },
         {
             "id": "ExtBox1-ext-gen12883",

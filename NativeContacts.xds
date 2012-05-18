@@ -121,6 +121,14 @@
                 "app/view/GroupList.js"
             ],
             "className": "GroupList"
+        },
+        "6697b8a2-4f39-4375-8657-efca5da12d58": {
+            "paths": [
+                "metadata/view/ContactOrder",
+                "app/view/override/ContactOrder.js",
+                "app/view/ContactOrder.js"
+            ],
+            "className": "ContactOrder"
         }
     },
     "expandedState": {
