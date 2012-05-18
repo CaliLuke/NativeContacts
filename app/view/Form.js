@@ -134,6 +134,7 @@ Ext.define('Contact.view.Form', {
                         itemId: 'group',
                         label: 'Group',
                         name: 'group',
+                        value: 'Contacts',
                         displayField: 'name',
                         store: 'GroupStore',
                         valueField: 'name'

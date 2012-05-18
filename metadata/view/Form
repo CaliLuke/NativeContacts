@@ -33,7 +33,7 @@
                 "designer|userClassName": "MyToolbar"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen27280",
@@ -292,6 +292,9 @@
                         "itemId": "group",
                         "label": "Group",
                         "name": "group",
+                        "value": "Contacts",
+                        "placeHolder": null,
+                        "defaultPhonePickerConfig": null,
                         "displayField": "name",
                         "store": "GroupStore",
                         "valueField": "name",

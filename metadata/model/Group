@@ -23,6 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": null,
                 "name": "name",
                 "type": "string",
                 "designer|userClassName": "MyField10"

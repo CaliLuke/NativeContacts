@@ -12,7 +12,7 @@
     "customConfigs": [],
     "designerId": "218f2c46-69a4-44c6-8b9e-29b8e3d800dc",
     "$viewOrder": 0,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen17531",
@@ -183,6 +183,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": null,
                 "name": "group",
                 "type": "string",
                 "designer|userClassName": "MyField11"

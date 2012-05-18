@@ -111,6 +111,9 @@ Ext.application({
             });
             //Add demo groups
             gs.add({
+                name: 'Contacts' // Default group
+            });
+            gs.add({
                 name: 'Github'
             });
             gs.add({
