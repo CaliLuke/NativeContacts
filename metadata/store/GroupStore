@@ -43,7 +43,7 @@
             "codeClass": null,
             "userConfig": {
                 "id": "GroupSorter",
-                "property": "firstName",
+                "property": "name",
                 "designer|userClassName": "MySorter"
             },
             "customConfigs": [],

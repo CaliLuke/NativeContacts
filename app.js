@@ -39,7 +39,8 @@ Ext.application({
         'Form',
         'Picture',
         'ContactList',
-        'FavoriteView'
+        'FavoriteView',
+        'GroupList'
     ],
     name: 'Contact',
     controllers: [

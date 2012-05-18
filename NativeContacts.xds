@@ -113,13 +113,21 @@
                 "app/model/Group.js"
             ],
             "className": "Group"
+        },
+        "bc1e5473-2500-47e3-9491-8cf957b6a6cd": {
+            "paths": [
+                "metadata/view/GroupList",
+                "app/view/override/GroupList.js",
+                "app/view/GroupList.js"
+            ],
+            "className": "GroupList"
         }
     },
     "expandedState": {
         "data": true,
         "model": true,
         "component": true,
-        "controller": true,
+        "controller": false,
         "resource": true
     }
 }

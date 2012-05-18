@@ -13,7 +13,7 @@
     "customConfigs": [],
     "designerId": "ab0ebc18-fc5b-43b1-8958-7395bd191769",
     "$viewOrder": 0,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen4203",
@@ -26,6 +26,7 @@
             "userConfig": {
                 "border": "",
                 "docked": "top",
+                "itemId": null,
                 "designer|userClassName": "MyTabBar",
                 "container|pack": "center"
             },
@@ -66,6 +67,22 @@
             "masterInstanceId": "ExtBox1-ext-gen4991"
         },
         {
+            "id": "ExtBox1-ext-gen16628",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Groups"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen15934"
+        },
+        {
             "id": "ExtBox1-ext-gen22882",
             "type": "toolbar",
             "reference": {
@@ -75,10 +92,11 @@
             "codeClass": null,
             "userConfig": {
                 "docked": "bottom",
+                "itemId": "MainToolbar",
                 "designer|userClassName": "MyToolbar2"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen23068",

@@ -1,0 +1,21 @@
+{
+    "id": "ExtBox1-ext-gen15934",
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "emptyText": "No Contacts",
+        "itemTpl": "<div>{name}</div>",
+        "store": "GroupStore",
+        "disableSelection": true,
+        "designer|userClassName": "GroupList",
+        "designer|userAlias": "grouplist"
+    },
+    "customConfigs": [],
+    "designerId": "bc1e5473-2500-47e3-9491-8cf957b6a6cd",
+    "$viewOrder": 5,
+    "expanded": true
+}

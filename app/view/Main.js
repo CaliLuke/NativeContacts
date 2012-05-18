@@ -17,7 +17,8 @@ Ext.define('Contact.view.Main', {
     extend: 'Ext.tab.Panel',
     requires: [
         'Contact.view.ContactList',
-        'Contact.view.FavoriteView'
+        'Contact.view.FavoriteView',
+        'Contact.view.GroupList'
     ],
 
     config: {
@@ -39,8 +40,13 @@ Ext.define('Contact.view.Main', {
                 title: 'Favorites'
             },
             {
+                xtype: 'grouplist',
+                title: 'Groups'
+            },
+            {
                 xtype: 'toolbar',
                 docked: 'bottom',
+                itemId: 'MainToolbar',
                 items: [
                     {
                         xtype: 'button',
