@@ -99,7 +99,12 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onFavoriteBtnTap",
-                                "implHandler": "var pressingCls = 'x-button-pressed';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
+                                "implHandler": [
+                                    "var pressingCls = 'x-button-pressed';",
+                                    "button.element.toggleCls(pressingCls);",
+                                    "var isPressed = button.element.hasCls(pressingCls);",
+                                    "this.getRecord().set('isFavorite', isPressed);"
+                                ],
                                 "name": "tap",
                                 "designer|userClassName": "onFavoriteBtnTap"
                             },
@@ -222,7 +227,16 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "this.callParent(arguments);\nif (record) {\n    var name = record.get('firstName') + ' ' + (record.get('lastName') || '');\n    var isFavorite = record.get('isFavorite');\n    this.down('#nameTxt').setHtml(name);\n    this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressed');\n    this.down('contactpic').setData(record.data);\n}",
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "if (record) {",
+                    "    var name = record.get('firstName') + ' ' + (record.get('lastName') || '');",
+                    "    var isFavorite = record.get('isFavorite');",
+                    "    this.down('#nameTxt').setHtml(name);",
+                    "    this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressed');",
+                    "    this.down('contactpic').setData(record.data);",
+                    "}"
+                ],
                 "designer|userClassName": "setRecord"
             },
             "customConfigs": [],

@@ -1,12 +1,11 @@
 {
     "name": "NativeContacts",
     "settings": {
-        "urlPrefix": "http://localhost/~luca/NativeContacts/",
-        "directAPI": "",
+        "urlPrefix": "http://contacts.dev",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "exportPath": "/Users/luca/Sites/NativeDeploy",
-        "extPath": "http://localhost/~luca/st2/",
+        "extPath": "http://sencha.dev/st2/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
         "lineEnding": "LF",
@@ -14,10 +13,11 @@
         "genTimestamps": false,
         "saveOnDeploy": false,
         "appName": "MyApp",
-        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true"
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "directAPI": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "423",
+    "xdsBuild": "442",
     "framework": "touch20",
     "topInstanceFileMap": {
         "ab0ebc18-fc5b-43b1-8958-7395bd191769": {
@@ -97,11 +97,27 @@
                 "metadata/resource/css"
             ],
             "className": "css"
+        },
+        "9b7bdf33-2485-41b5-a520-7cd2e406f047": {
+            "paths": [
+                "metadata/store/GroupStore",
+                "app/store/override/GroupStore.js",
+                "app/store/GroupStore.js"
+            ],
+            "className": "GroupStore"
+        },
+        "f196928e-6f45-409d-88a6-68cff0eaebe2": {
+            "paths": [
+                "metadata/model/Group",
+                "app/model/override/Group.js",
+                "app/model/Group.js"
+            ],
+            "className": "Group"
         }
     },
     "expandedState": {
         "data": true,
-        "model": false,
+        "model": true,
         "component": true,
         "controller": true,
         "resource": true

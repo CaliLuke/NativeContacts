@@ -272,7 +272,19 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "getValidationErrors",
-                "implHandler": "var errors = [];\nvar reqFields = this.query('field[required=true]');\nvar i = 0, ln = reqFields.length, field;\nfor (; i < ln; i++) {\n    field = reqFields[i];\n    if (!field.getValue()) {\n        errors.push(field.getLabel() + ' must be completed.');\n    }\n}\nconsole.dir(errors);\nreturn errors;",
+                "implHandler": [
+                    "var errors = [];",
+                    "var reqFields = this.query('field[required=true]');",
+                    "var i = 0, ln = reqFields.length, field;",
+                    "for (; i < ln; i++) {",
+                    "    field = reqFields[i];",
+                    "    if (!field.getValue()) {",
+                    "        errors.push(field.getLabel() + ' must be completed.');",
+                    "    }",
+                    "}",
+                    "console.dir(errors);",
+                    "return errors;"
+                ],
                 "designer|userClassName": "getValidationErrors"
             },
             "customConfigs": [],
@@ -291,7 +303,12 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "this.callParent(arguments);\nif (record) {\n    this.child('contactpic').setData(record.data);\n}",
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "if (record) {",
+                    "    this.child('contactpic').setData(record.data);",
+                    "}"
+                ],
                 "designer|userClassName": "setRecord"
             },
             "customConfigs": [],

@@ -81,7 +81,14 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onAddContactBtnTap",
-                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nform.setRecord(null);\nform.reset();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);",
+                "implHandler": [
+                    "var referrer = Ext.Viewport.getActiveItem();",
+                    "var form = this.getContactform();",
+                    "form.setRecord(null);",
+                    "form.reset();",
+                    "form.referrer = referrer;",
+                    "Ext.Viewport.setActiveItem(form);"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#addContactBtn",
@@ -100,7 +107,29 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onSaveContactBtnTap",
-                "implHandler": "var form = this.getContactform();\nvar errors = form.getValidationErrors();\n\nif (errors.length) {\n    Ext.Msg.alert('Error', errors.join('<br/>'));\n} else {\n    var values = form.getValues();\n    var record = form.getRecord();\n    if (record) {\n        record.setData(values);\n        record.commit();\n        if (form.referrer.setInfo) {\n            form.referrer.setInfo(record);\n        }\n    } else {\n        Ext.StoreManager.lookup('ContactStore').add(values);\n    }\n    Ext.Viewport.setActiveItem(form.referrer);\n    delete form.referrer;\n}\n",
+                "implHandler": [
+                    "var form = this.getContactform();",
+                    "var errors = form.getValidationErrors();",
+                    "",
+                    "if (errors.length) {",
+                    "    Ext.Msg.alert('Error', errors.join('<br/>'));",
+                    "} else {",
+                    "    var values = form.getValues();",
+                    "    var record = form.getRecord();",
+                    "    if (record) {",
+                    "        record.setData(values);",
+                    "        record.commit();",
+                    "        if (form.referrer.setInfo) {",
+                    "            form.referrer.setInfo(record);",
+                    "        }",
+                    "    } else {",
+                    "        Ext.StoreManager.lookup('ContactStore').add(values);",
+                    "    }",
+                    "    Ext.Viewport.setActiveItem(form.referrer);",
+                    "    delete form.referrer;",
+                    "}",
+                    ""
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#saveContactBtn",
@@ -119,7 +148,14 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onEditContactBtnTap",
-                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nvar info = this.getContactinfo();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);\nform.setRecord(info.getRecord());",
+                "implHandler": [
+                    "var referrer = Ext.Viewport.getActiveItem();",
+                    "var form = this.getContactform();",
+                    "var info = this.getContactinfo();",
+                    "form.referrer = referrer;",
+                    "Ext.Viewport.setActiveItem(form);",
+                    "form.setRecord(info.getRecord());"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#editContactBtn",
@@ -138,7 +174,12 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onCancelBtnTap",
-                "implHandler": "var form = this.getContactform();\nExt.Viewport.setActiveItem(form.referrer);\ndelete form.referrer;\n",
+                "implHandler": [
+                    "var form = this.getContactform();",
+                    "Ext.Viewport.setActiveItem(form.referrer);",
+                    "delete form.referrer;",
+                    ""
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#cancelBtn",
@@ -157,7 +198,12 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onContactItemTap",
-                "implHandler": "var info = this.getContactinfo();\ninfo.setRecord(record);\nExt.Viewport.setActiveItem(info);\n",
+                "implHandler": [
+                    "var info = this.getContactinfo();",
+                    "info.setRecord(record);",
+                    "Ext.Viewport.setActiveItem(info);",
+                    ""
+                ],
                 "name": "itemtap",
                 "designer|targetType": "Ext.dataview.DataView",
                 "designer|controlQuery": "dataview",
@@ -176,7 +222,9 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onInfoBackBtnTap",
-                "implHandler": "Ext.Viewport.setActiveItem(0);",
+                "implHandler": [
+                    "Ext.Viewport.setActiveItem(0);"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
                 "designer|controlQuery": "button#infoBackBtn",
@@ -195,7 +243,10 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onFavoriteViewActivate",
-                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.filter('isFavorite', true);",
+                "implHandler": [
+                    "var ds = Ext.StoreManager.lookup('ContactStore');",
+                    "ds.filter('isFavorite', true);"
+                ],
                 "name": "activate",
                 "designer|targetType": "Ext.dataview.DataView",
                 "designer|controlQuery": "favoriteview",
@@ -214,7 +265,10 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onListActivate",
-                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.clearFilter();",
+                "implHandler": [
+                    "var ds = Ext.StoreManager.lookup('ContactStore');",
+                    "ds.clearFilter();"
+                ],
                 "name": "activate",
                 "designer|targetType": "Ext.dataview.List",
                 "designer|controlQuery": "list",
@@ -233,7 +287,17 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onContactPickerChange",
-                "implHandler": "var currentForm = Ext.Viewport.getActiveItem();\nvar record = currentForm.getRecord();\nif (record) {\n    Ext.Msg.alert('pic', 'setting pic to ' + value);\n    record.set('picture', value);\n    record.commit();\n    currentForm.setRecord(record);\n}\n",
+                "implHandler": [
+                    "var currentForm = Ext.Viewport.getActiveItem();",
+                    "var record = currentForm.getRecord();",
+                    "if (record) {",
+                    "    Ext.Msg.alert('pic', 'setting pic to ' + value);",
+                    "    record.set('picture', value);",
+                    "    record.commit();",
+                    "    currentForm.setRecord(record);",
+                    "}",
+                    ""
+                ],
                 "name": "change",
                 "designer|targetType": "Ext.picker.Picker",
                 "designer|controlQuery": "contactpic",

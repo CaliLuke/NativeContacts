@@ -12,7 +12,7 @@
     "customConfigs": [],
     "designerId": "218f2c46-69a4-44c6-8b9e-29b8e3d800dc",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen17531",
@@ -170,6 +170,22 @@
                 "name": "isFavorite",
                 "type": "boolean",
                 "designer|userClassName": "MyField9"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8077",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "group",
+                "type": "string",
+                "designer|userClassName": "MyField11"
             },
             "customConfigs": [],
             "expanded": true
