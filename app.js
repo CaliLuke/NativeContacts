@@ -97,16 +97,19 @@ Ext.application({
             cs.add({
                 firstName: 'Osvaldo',
                 lastName: 'Brignoni',
+                phoneNumber: '555-555-1234',
                 group: 'Github'
             });
             cs.add({
                 firstName: 'Tom',
                 lastName: 'Hanks',
+                phoneNumber: '555-555-1234',
                 group: 'Movie Stars'
             });
             cs.add({
                 firstName: 'Julia',
                 lastName: 'Roberts',
+                phoneNumber: '555-555-1234',
                 group: 'Movie Stars'
             });
             //Add demo groups
