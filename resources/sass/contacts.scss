@@ -1,4 +1,9 @@
-$base-color: #ff0;
+// Variable overrides
+$myblue: #2BD;
+
+$base-color: $myblue;
+
+// Including Sencha Touch styles
 
 @import 'sencha-touch/default/all';
 
@@ -18,3 +23,12 @@ $base-color: #ff0;
 @include sencha-form;
 @include sencha-msgbox;
 @include sencha-loading-spinner;
+
+.square {
+	border-radius: 0px;
+}
+
+.contact-name {
+	color: white;
+	padding-left: 4px;
+}

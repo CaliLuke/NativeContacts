@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen19686",
     "type": "store",
     "reference": {
         "name": "items",
@@ -7,19 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ContactStore",
         "autoLoad": true,
         "autoSync": true,
         "model": "Contact",
-        "storeId": "ContactStore",
-        "designer|userClassName": "ContactStore"
+        "storeId": "ContactStore"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen19686",
     "designerId": "8173b689-b7f9-4661-9bb0-6cba367d3d80",
-    "$viewOrder": 0,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen21180",
             "type": "localstorageproxy",
             "reference": {
                 "name": "proxy",
@@ -29,11 +25,9 @@
             "userConfig": {
                 "designer|userClassName": "MyLocalStorageProxy"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "dbc31c38-13b6-41fa-bf8f-6b29f6b2a358"
         },
         {
-            "id": "ExtBox1-ext-gen31918",
             "type": "grouper",
             "reference": {
                 "name": "grouper",
@@ -43,11 +37,9 @@
             "userConfig": {
                 "designer|userClassName": "MyGrouper"
             },
-            "customConfigs": [],
-            "expanded": false,
+            "designerId": "3bba5afe-a9bb-427a-864f-f08f3fde514f",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen32026",
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -55,21 +47,21 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "groupFn",
                         "fn": "groupFn",
                         "designer|params": [
                             "record"
                         ],
-                        "implHandler": "return record.get('firstName')[0];\n",
-                        "designer|userClassName": "groupFn"
+                        "implHandler": [
+                            "return record.get('firstName')[0];",
+                            ""
+                        ]
                     },
-                    "customConfigs": [],
-                    "iconCls": "icon-basic-function",
-                    "expanded": true
+                    "designerId": "797a643d-743c-4884-9d31-7dfa69d7afc7"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen32431",
             "type": "sorter",
             "reference": {
                 "name": "sorters",
@@ -77,11 +69,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "firstName",
-                "designer|userClassName": "MySorter"
+                "designer|userClassName": "MySorter",
+                "property": "firstName"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "5f089979-7818-4125-bcde-c8f7d886c5ba"
         }
     ]
 }

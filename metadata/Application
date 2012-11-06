@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen2029",
     "type": "application",
     "reference": {
         "name": "items",
@@ -7,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "requires": [
+            "Ext.device.Camera"
+        ],
         "models": [
             "Contact"
         ],
@@ -24,19 +26,12 @@
         "name": "Contact",
         "controllers": [
             "Contacts"
-        ],
-        "designer|requires": [
-            "Ext.device.Camera"
         ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen2029",
     "designerId": "application",
-    "$viewOrder": 0,
-    "iconCls": "icon-application",
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen46097",
             "type": "fixedfunction",
             "reference": {
                 "name": "items",
@@ -44,16 +39,52 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "launch",
                 "fn": "launch",
-                "implHandler": "Ext.require('Ext.device.*');\nExt.util.Format.empty = function(value, defaultValue) {\n    return !Ext.isEmpty(value) ? value : defaultValue;\n};\nExt.util.Format.undef = function(value, defaultValue) {\n    return Ext.isDefined(value) ? value : defaultValue;\n};\nvar ds = Ext.StoreMgr.lookup('ContactStore');\nif (!ds.getCount()) {\n    Ext.Msg.alert('Intro', 'Setting up default database.');\n    ds.add({\n        firstName: 'Aaron',\n        lastName: 'Conran',\n        emailAddress: 'aaron@sencha.com',\n        phoneNumber: '443-555-1234'\n    });\n    ds.add({\n        firstName: 'Aditya',\n        lastName: 'Bansod',\n        phoneNumber: '555-555-1234'\n    });\n    ds.add({\n        firstName: 'Luca',\n        lastName: 'Candela',\n        phoneNumber: '555-555-1234'\n    });\n    ds.add({\n        firstName: 'Tommy',\n        lastName: 'Maintz',\n        isFavorite: true,\n        phoneNumber: '717-555-1234'\n    });\n    ds.add({\n        firstName: 'Nige',\n        lastName: '(Animal) White',\n        isFavorite: true,\n        phoneNumber: '555-555-1234'\n    });\n}",
-                "designer|userClassName": "launch"
+                "implHandler": [
+                    "Ext.util.Format.empty = function(value, defaultValue) {",
+                    "    return !Ext.isEmpty(value) ? value : defaultValue;",
+                    "};",
+                    "Ext.util.Format.undef = function(value, defaultValue) {",
+                    "    return Ext.isDefined(value) ? value : defaultValue;",
+                    "};",
+                    "var ds = Ext.StoreMgr.lookup('ContactStore');",
+                    "if (!ds.getCount()) {",
+                    "    Ext.Msg.alert('Intro', 'Setting up default database.');",
+                    "    ds.add({",
+                    "        firstName: 'Aaron',",
+                    "        lastName: 'Conran',",
+                    "        emailAddress: 'aaron@sencha.com',",
+                    "        phoneNumber: '443-555-1234'",
+                    "    });",
+                    "    ds.add({",
+                    "        firstName: 'Aditya',",
+                    "        lastName: 'Bansod',",
+                    "        phoneNumber: '555-555-1234'",
+                    "    });",
+                    "    ds.add({",
+                    "        firstName: 'Luca',",
+                    "        lastName: 'Candela',",
+                    "        phoneNumber: '555-555-1234'",
+                    "    });",
+                    "    ds.add({",
+                    "        firstName: 'Tommy',",
+                    "        lastName: 'Maintz',",
+                    "        isFavorite: true,",
+                    "        phoneNumber: '717-555-1234'",
+                    "    });",
+                    "    ds.add({",
+                    "        firstName: 'Nige',",
+                    "        lastName: '(Animal) White',",
+                    "        isFavorite: true,",
+                    "        phoneNumber: '555-555-1234'",
+                    "    });",
+                    "}"
+                ]
             },
-            "customConfigs": [],
-            "iconCls": "icon-basic-function",
-            "expanded": true
+            "designerId": "ba1fcbb2-e63e-445e-a67c-ec117224b08e"
         },
         {
-            "id": "ExtBox1-ext-gen74334",
             "type": "loader",
             "reference": {
                 "name": "loader",
@@ -61,13 +92,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "Loader",
                 "enabled": true,
-                "paths": "{\"Ext.device\":\"device/\"}",
-                "designer|userClassName": "Loader"
+                "paths": [
+                    "{\"Ext.device\":\"device/\"}"
+                ]
             },
-            "customConfigs": [],
-            "iconCls": "icon-loader",
-            "expanded": true
+            "designerId": "cf9aa7ff-9188-40b1-a092-5c591cea8297"
         }
     ]
 }

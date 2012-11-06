@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen2950",
     "type": "list",
     "reference": {
         "name": "items",
@@ -7,21 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "emptyText": "No Contacts",
-        "itemTpl": "<div>{firstName} {lastName}</div>",
-        "store": "ContactStore",
-        "disableSelection": true,
-        "grouped": true,
         "designer|userClassName": "List",
-        "designer|userAlias": "contactlist"
+        "designer|userAlias": "contactlist",
+        "emptyText": "No Contacts",
+        "store": "ContactStore",
+        "disableSelection": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen2950",
     "designerId": "5b610c64-3053-4d2f-8bfb-77077b9b2217",
-    "$viewOrder": 4,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen3212",
             "type": "listindexbar",
             "reference": {
                 "name": "indexBar",
@@ -29,11 +23,26 @@
             },
             "codeClass": null,
             "userConfig": {
-                "letters": null,
-                "designer|userClassName": "MyIndexBar"
+                "designer|userClassName": "MyIndexBar",
+                "letters": null
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "62e06e22-c1ef-4c62-a31f-308b64178caa"
+        },
+        {
+            "type": "template",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "itemTpl",
+                "implHandler": [
+                    "<div>{firstName} {lastName}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "218dddcb-9a35-4f10-8ae0-78a321386a81"
         }
     ]
 }

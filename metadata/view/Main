@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen2077",
     "type": "tabpanel",
     "reference": {
         "name": "items",
@@ -7,16 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
-        "designer|userClassName": "Main"
+        "designer|userClassName": "Main",
+        "designer|initialView": true
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen2077",
     "designerId": "ab0ebc18-fc5b-43b1-8958-7395bd191769",
-    "$viewOrder": 0,
-    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen4203",
             "type": "tabbar",
             "reference": {
                 "name": "tabBar",
@@ -24,17 +20,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "border": "",
-                "docked": "top",
+                "container|pack": "center",
                 "designer|userClassName": "MyTabBar",
-                "container|pack": "center"
+                "border": "",
+                "docked": "top"
             },
-            "customConfigs": [],
-            "iconCls": "icon-tab-bar",
-            "expanded": true
+            "designerId": "8952dde9-dac2-4b88-9838-9ef8f3fe34b8"
         },
         {
-            "id": "ExtBox1-ext-gen11622",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -44,13 +37,10 @@
             "userConfig": {
                 "title": "Contacts"
             },
-            "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
-            "expanded": true,
+            "designerId": "84624564-a015-48ea-8088-c56c025a60d5",
             "masterInstanceId": "ExtBox1-ext-gen2950"
         },
         {
-            "id": "ExtBox1-ext-gen12883",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -60,13 +50,10 @@
             "userConfig": {
                 "title": "Favorites"
             },
-            "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
-            "expanded": true,
+            "designerId": "2ce4f1c3-5577-42a8-b2ac-501455c9e8f1",
             "masterInstanceId": "ExtBox1-ext-gen4991"
         },
         {
-            "id": "ExtBox1-ext-gen22882",
             "type": "toolbar",
             "reference": {
                 "name": "items",
@@ -74,14 +61,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "docked": "bottom",
-                "designer|userClassName": "MyToolbar2"
+                "designer|userClassName": "MyToolbar2",
+                "docked": "bottom"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "469e1f53-0b7f-427f-b138-42e45c6f7d8b",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen23068",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -89,15 +74,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyButton6",
+                        "cls": "square",
                         "itemId": "addContactBtn",
                         "ui": "action",
                         "iconCls": "add",
                         "iconMask": true,
-                        "text": "Add Contact",
-                        "designer|userClassName": "MyButton6"
+                        "text": "Add Contact"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "098ee7e2-ee63-4dc9-8c17-ac69f32981a2"
                 }
             ]
         }

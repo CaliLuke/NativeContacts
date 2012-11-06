@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen4991",
     "type": "dataview",
     "reference": {
         "name": "items",
@@ -7,16 +6,35 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": "horizontal",
-        "emptyText": "No Favorite Contacts",
-        "inline": "true",
-        "itemTpl": "<img src=\"{picture:empty(\"resources/img/defaultContactPic.png\")}\" width=\"160\" /><div>{firstName} {lastName}</div>",
-        "store": "ContactStore",
         "designer|userClassName": "FavoriteView",
-        "designer|userAlias": "favoriteview"
+        "designer|userAlias": "favoriteview",
+        "scrollable": [
+            "vertical"
+        ],
+        "emptyText": "No Favorite Contacts",
+        "inline": [
+            "true"
+        ],
+        "store": "ContactStore"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen4991",
     "designerId": "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b",
-    "$viewOrder": 5,
-    "expanded": true
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "itemTpl",
+                "implHandler": [
+                    "<img src=\"{picture:empty(\"resources/img/defaultContactPic.png\")}\" width=\"160\" /><div>{firstName} {lastName}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "1308b91b-18a7-4f92-84d9-e7b4edce8da0"
+        }
+    ]
 }

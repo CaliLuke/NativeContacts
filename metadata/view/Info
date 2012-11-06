@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen6063",
     "type": "formpanel",
     "reference": {
         "name": "items",
@@ -7,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": null,
-        "padding": "10px",
         "designer|userClassName": "Info",
-        "designer|userAlias": "contactinfo"
+        "designer|userAlias": "contactinfo",
+        "id": null,
+        "padding": "10px"
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen6063",
     "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
-    "$viewOrder": 1,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen8444",
             "type": "toolbar",
             "reference": {
                 "name": "items",
@@ -26,14 +22,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "docked": "top",
-                "designer|userClassName": "MyToolbar"
+                "designer|userClassName": "MyToolbar",
+                "docked": "top"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "b4f1c33c-db01-4a13-9131-db478a8a0b21",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen9643",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -41,16 +35,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyButton5",
                         "itemId": "infoBackBtn",
                         "ui": "back",
-                        "text": "Back",
-                        "designer|userClassName": "MyButton5"
+                        "text": "Back"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "59364094-80aa-40dc-81a9-6b24a0cf0d09"
                 },
                 {
-                    "id": "ExtBox1-ext-gen6787",
                     "type": "component",
                     "reference": {
                         "name": "items",
@@ -58,18 +50,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MyComponent",
+                        "cls": [
+                            "contact-name"
+                        ],
                         "height": null,
                         "html": "First Name Last Name",
                         "id": null,
-                        "itemId": "nameTxt",
-                        "designer|userClassName": "MyComponent",
-                        "layout|flex": 1
+                        "itemId": "nameTxt"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "a8e6751f-5a9a-4f5c-946c-43e2a9282518"
                 },
                 {
-                    "id": "ExtBox1-ext-gen8261",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -77,20 +70,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyButton",
                         "cls": null,
                         "id": null,
                         "itemId": "favoriteBtn",
                         "ui": null,
                         "iconCls": "favorites",
                         "iconMask": true,
-                        "text": "",
-                        "designer|userClassName": "MyButton"
+                        "text": ""
                     },
-                    "customConfigs": [],
-                    "expanded": true,
+                    "designerId": "5c21c37f-b22a-468b-97e3-8403e28febc2",
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen77503",
                             "type": "basiceventbinding",
                             "reference": {
                                 "name": "listeners",
@@ -98,18 +89,22 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|userClassName": "onFavoriteBtnTap",
                                 "fn": "onFavoriteBtnTap",
-                                "implHandler": "var pressingCls = 'x-button-pressed';\nbutton.element.toggleCls(pressingCls);\nvar isPressed = button.element.hasCls(pressingCls);\nthis.getRecord().set('isFavorite', isPressed);",
-                                "name": "tap",
-                                "designer|userClassName": "onFavoriteBtnTap"
+                                "implHandler": [
+                                    "var pressingCls = 'x-button-pressed';",
+                                    "button.element.toggleCls(pressingCls);",
+                                    "var isPressed = button.element.hasCls(pressingCls);",
+                                    "var record = this.getRecord();",
+                                    "record.set('isFavorite', isPressed);"
+                                ],
+                                "name": "tap"
                             },
-                            "customConfigs": [],
-                            "expanded": true
+                            "designerId": "de8e3ebb-f46a-4c7d-b4e9-4cf8eebeb66e"
                         }
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen20878",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -117,34 +112,28 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyButton",
                         "id": "",
                         "itemId": "editContactBtn",
                         "iconCls": "compose",
                         "iconMask": true,
-                        "text": "",
-                        "designer|userClassName": "MyButton"
+                        "text": ""
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "672443c1-dc30-4aee-be97-c8468fcab5b1"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen6728",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
-            "userConfig": {},
-            "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
-            "expanded": true,
+            "designerId": "11b52498-1b3f-4cbb-9bda-c4460a0770c8",
             "masterInstanceId": "ExtBox1-ext-gen15697"
         },
         {
-            "id": "ExtBox1-ext-gen19671",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -152,20 +141,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "disabled": true,
                 "itemId": "phoneNumber",
                 "clearIcon": false,
                 "label": "Phone Number",
                 "labelAlign": "top",
                 "name": "phoneNumber",
-                "readOnly": true,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": true
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "149d2490-d573-478d-94a7-884d2ff9b1e8"
         },
         {
-            "id": "ExtBox1-ext-gen19570",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -173,6 +160,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "disabled": true,
                 "itemId": "emailAddress",
                 "clearIcon": false,
@@ -180,14 +168,11 @@
                 "labelAlign": "top",
                 "name": "emailAddress",
                 "placeHolder": "Email address not provided",
-                "readOnly": true,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": true
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e451d8e5-5316-4268-a50c-436141b4e8a6"
         },
         {
-            "id": "ExtBox1-ext-gen16046",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -195,6 +180,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "disabled": true,
                 "id": "address",
                 "itemId": null,
@@ -203,14 +189,11 @@
                 "labelAlign": "top",
                 "name": "address",
                 "placeHolder": "Address not provided",
-                "readOnly": true,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": true
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "81714e4d-fcdb-4c2b-a1ca-9fa0ceba62ca"
         },
         {
-            "id": "ExtBox1-ext-gen63864",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -218,15 +201,23 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "setRecord",
                 "fn": "setRecord",
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "this.callParent(arguments);\nif (record) {\n    var name = record.get('firstName') + ' ' + (record.get('lastName') || '');\n    var isFavorite = record.get('isFavorite');\n    this.down('#nameTxt').setHtml(name);\n    this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressed');\n    this.down('contactpic').setData(record.data);\n}",
-                "designer|userClassName": "setRecord"
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "if (record) {",
+                    "    var name = record.get('firstName') + ' ' + (record.get('lastName') || '');",
+                    "    var isFavorite = record.get('isFavorite');",
+                    "    this.down('#nameTxt').setHtml(name);",
+                    "    this.down('#favoriteBtn')[isFavorite ? 'addCls' : 'removeCls']('x-button-pressed');",
+                    "    this.down('contactpic').setData(record.data);",
+                    "}"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d9797c1a-36ac-4a31-a8b0-01d1ad2a4bbe"
         }
     ]
 }

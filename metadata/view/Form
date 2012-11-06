@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen27267",
     "type": "formpanel",
     "reference": {
         "name": "items",
@@ -7,20 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "Form",
+        "designer|userAlias": "contactform",
         "id": null,
         "itemId": "formCancelBtn",
         "padding": "10px",
-        "scrollable": "true",
-        "designer|userClassName": "Form",
-        "designer|userAlias": "contactform"
+        "scrollable": [
+            "true"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen27267",
     "designerId": "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
-    "$viewOrder": 2,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen27271",
             "type": "toolbar",
             "reference": {
                 "name": "items",
@@ -28,14 +26,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "docked": "top",
-                "designer|userClassName": "MyToolbar"
+                "designer|userClassName": "MyToolbar",
+                "docked": "top"
             },
-            "customConfigs": [],
-            "expanded": true,
+            "designerId": "32288607-5579-4c95-b4ee-e5d4fc422625",
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen27280",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -43,19 +39,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyButton",
                         "id": "starContact",
                         "itemId": "cancelBtn",
                         "ui": "decline",
                         "iconCls": null,
                         "iconMask": true,
-                        "text": "Cancel",
-                        "designer|userClassName": "MyButton"
+                        "text": "Cancel"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "2c109d9b-cbc1-43c2-ad39-e4949b1298f5"
                 },
                 {
-                    "id": "ExtBox1-ext-gen9304",
                     "type": "spacer",
                     "reference": {
                         "name": "items",
@@ -65,11 +59,9 @@
                     "userConfig": {
                         "designer|userClassName": "MySpacer"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "e4ca9257-17fc-45c5-a763-d62e311a539b"
                 },
                 {
-                    "id": "ExtBox1-ext-gen27285",
                     "type": "button",
                     "reference": {
                         "name": "items",
@@ -77,35 +69,29 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|userClassName": "MyButton",
                         "id": null,
                         "itemId": "saveContactBtn",
                         "ui": "action",
                         "iconCls": "",
                         "iconMask": true,
-                        "text": "Save",
-                        "designer|userClassName": "MyButton"
+                        "text": "Save"
                     },
-                    "customConfigs": [],
-                    "expanded": true
+                    "designerId": "15213c48-d0d1-4993-8d50-96fa8953191b"
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen8020",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
-            "userConfig": {},
-            "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
-            "expanded": true,
+            "designerId": "704088da-a51c-4815-b2e0-d9b9b472694d",
             "masterInstanceId": "ExtBox1-ext-gen15697"
         },
         {
-            "id": "ExtBox1-ext-gen27303",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -113,20 +99,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField",
                 "itemId": "firstName",
                 "margin": "10px 0 0 0",
                 "label": "First Name",
                 "labelAlign": "top",
                 "name": "firstName",
                 "required": true,
-                "readOnly": false,
-                "designer|userClassName": "MyTextField"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "9e8fecd4-dbb2-4c28-92da-0c97bf71a356"
         },
         {
-            "id": "ExtBox1-ext-gen27307",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -134,18 +118,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "itemId": "lastName",
                 "label": "Last Name",
                 "labelAlign": "top",
                 "name": "lastName",
-                "readOnly": false,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "dbc98826-aaf1-4c8a-9f3a-8b21d8b8b629"
         },
         {
-            "id": "ExtBox1-ext-gen27315",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -153,19 +135,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "itemId": "phoneNumber",
                 "label": "Phone Number",
                 "labelAlign": "top",
                 "name": "phoneNumber",
                 "required": true,
-                "readOnly": false,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b13c1c6b-53d9-4cef-bc83-eda716409342"
         },
         {
-            "id": "ExtBox1-ext-gen27311",
             "type": "emailfield",
             "reference": {
                 "name": "items",
@@ -173,19 +153,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyEmailField",
                 "itemId": "emailAddress",
                 "label": "Email Address",
                 "labelAlign": "top",
                 "name": "emailAddress",
                 "placeHolder": "email@example.com",
-                "readOnly": false,
-                "designer|userClassName": "MyEmailField"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "1a2892c3-bd99-46ae-b464-762d633f52fb"
         },
         {
-            "id": "ExtBox1-ext-gen11669",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -193,18 +171,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "itemId": "address",
                 "label": "Address",
                 "labelAlign": "top",
                 "name": "address",
-                "readOnly": false,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "fd17f2d4-3915-4475-85e5-dcf44231b4fb"
         },
         {
-            "id": "ExtBox1-ext-gen12065",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -212,18 +188,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "itemId": "city",
                 "label": "City",
                 "labelAlign": "top",
                 "name": "city",
-                "readOnly": false,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "18809ca3-c0f6-48e3-ab2c-97c4698dd74b"
         },
         {
-            "id": "ExtBox1-ext-gen12173",
             "type": "textfield",
             "reference": {
                 "name": "items",
@@ -231,19 +205,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyTextField1",
                 "id": "state",
                 "itemId": "address",
                 "label": "State",
                 "labelAlign": "top",
                 "name": "city",
-                "readOnly": false,
-                "designer|userClassName": "MyTextField1"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d21db6c3-5c5a-431b-9430-ce63b4e9d179"
         },
         {
-            "id": "ExtBox1-ext-gen12560",
             "type": "numberfield",
             "reference": {
                 "name": "items",
@@ -251,19 +223,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyNumberField",
                 "id": "zipcode",
                 "itemId": "address",
                 "label": "Zipcode",
                 "labelAlign": "top",
                 "name": "zipcode",
-                "readOnly": false,
-                "designer|userClassName": "MyNumberField"
+                "readOnly": false
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "9b45c591-814b-4735-ac57-e371670f487c"
         },
         {
-            "id": "ExtBox1-ext-gen53380",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -271,15 +241,25 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "getValidationErrors",
                 "fn": "getValidationErrors",
-                "implHandler": "var errors = [];\nvar reqFields = this.query('field[required=true]');\nvar i = 0, ln = reqFields.length, field;\nfor (; i < ln; i++) {\n    field = reqFields[i];\n    if (!field.getValue()) {\n        errors.push(field.getLabel() + ' must be completed.');\n    }\n}\nconsole.dir(errors);\nreturn errors;",
-                "designer|userClassName": "getValidationErrors"
+                "implHandler": [
+                    "var errors = [];",
+                    "var reqFields = this.query('field[required=true]');",
+                    "var i = 0, ln = reqFields.length, field;",
+                    "for (; i < ln; i++) {",
+                    "    field = reqFields[i];",
+                    "    if (!field.getValue()) {",
+                    "        errors.push(field.getLabel() + ' must be completed.');",
+                    "    }",
+                    "}",
+                    "console.dir(errors);",
+                    "return errors;"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "8698e3b0-8972-4714-b4de-531de5fdbc31"
         },
         {
-            "id": "ExtBox1-ext-gen3024",
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -287,15 +267,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "setRecord",
                 "fn": "setRecord",
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "this.callParent(arguments);\nif (record) {\n    this.child('contactpic').setData(record.data);\n}",
-                "designer|userClassName": "setRecord"
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "if (record) {",
+                    "    this.child('contactpic').setData(record.data);",
+                    "}"
+                ]
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "07f9a781-7028-418e-b207-f98dcf7471d6"
         }
     ]
 }
