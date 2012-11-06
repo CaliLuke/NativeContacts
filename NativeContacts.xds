@@ -4,7 +4,7 @@
         "urlPrefix": "http://localhost/NativeContacts/",
         "spacesToIndent": 4,
         "exportPath": "",
-        "sdkPath": "",
+        "sdkPath": "/Users/aconran/Sites/releases/sencha-touch-2.1.0",
         "lineEnding": "LF",
         "genTimestamps": false,
         "cacheBust": false,
@@ -105,6 +105,14 @@
                 "metadata/resource/Library"
             ],
             "className": "Library"
+        },
+        "ab0185ab-ce77-45f4-baf3-ac9f5f753ffe": {
+            "paths": [
+                "metadata/resource/PackageSettings",
+                "",
+                "PackageSettings.json"
+            ],
+            "className": "PackageSettings"
         }
     },
     "viewOrderMap": {
@@ -127,7 +135,8 @@
         ],
         "resource": [
             "f81dd17b-02a8-4071-9594-4730c3b71ef7",
-            "83d5f462-ac48-477a-8b82-5867e132986d"
+            "83d5f462-ac48-477a-8b82-5867e132986d",
+            "ab0185ab-ce77-45f4-baf3-ac9f5f753ffe"
         ],
         "app": [
             "application"
