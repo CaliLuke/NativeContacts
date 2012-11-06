@@ -1,23 +1,25 @@
 {
     "name": "NativeContacts",
     "settings": {
-        "urlPrefix": "http://localhost/~luca/NativeContacts/",
-        "directAPI": "",
+        "urlPrefix": "http://localhost/NativeContacts/",
         "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "directAPI": "",
         "codeGenFormat": "Class",
-        "exportPath": "/Users/luca/Sites/NativeDeploy",
-        "extPath": "http://localhost/~luca/st2/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
-        "lineEnding": "LF",
         "instantiateStore": true,
-        "genTimestamps": false,
         "saveOnDeploy": false,
-        "appName": "MyApp",
-        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true"
+        "appName": "MyApp"
     },
-    "xdsVersion": "2.0.0",
-    "xdsBuild": "423",
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 670,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
     "framework": "touch20",
     "topInstanceFileMap": {
         "ab0ebc18-fc5b-43b1-8958-7395bd191769": {
@@ -97,13 +99,38 @@
                 "metadata/resource/css"
             ],
             "className": "css"
+        },
+        "f81dd17b-02a8-4071-9594-4730c3b71ef7": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
         }
     },
-    "expandedState": {
-        "data": true,
-        "model": false,
-        "component": true,
-        "controller": true,
-        "resource": true
+    "viewOrderMap": {
+        "view": [
+            "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b",
+            "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
+            "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
+            "266d5780-ee4a-4dca-a156-841cf77894ee",
+            "5b610c64-3053-4d2f-8bfb-77077b9b2217",
+            "ab0ebc18-fc5b-43b1-8958-7395bd191769"
+        ],
+        "store": [
+            "8173b689-b7f9-4661-9bb0-6cba367d3d80"
+        ],
+        "controller": [
+            "12f4e105-fe10-4110-a7c7-4be456e0092e"
+        ],
+        "model": [
+            "218f2c46-69a4-44c6-8b9e-29b8e3d800dc"
+        ],
+        "resource": [
+            "f81dd17b-02a8-4071-9594-4730c3b71ef7",
+            "83d5f462-ac48-477a-8b82-5867e132986d"
+        ],
+        "app": [
+            "application"
+        ]
     }
 }

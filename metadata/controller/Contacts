@@ -1,5 +1,4 @@
 {
-    "id": "ExtBox1-ext-gen24846",
     "type": "controller",
     "reference": {
         "name": "items",
@@ -7,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "Contacts",
         "stores": [
             "ContactStore"
-        ],
-        "designer|userClassName": "Contacts"
+        ]
     },
-    "customConfigs": [],
+    "id": "ExtBox1-ext-gen24846",
     "designerId": "12f4e105-fe10-4110-a7c7-4be456e0092e",
-    "$viewOrder": 0,
-    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen25027",
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -26,17 +22,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "contactinfo",
+                "autoCreate": true,
                 "ref": "contactinfo",
                 "selector": "contactinfo",
-                "xtype": "contactinfo",
-                "autoCreate": true,
-                "designer|userClassName": "contactinfo"
+                "xtype": "contactinfo"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "aaf3562e-9dd8-4774-b619-db3a85a3c662"
         },
         {
-            "id": "ExtBox1-ext-gen25200",
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -44,17 +38,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "contactform",
+                "autoCreate": true,
                 "ref": "contactform",
                 "selector": "contactform",
-                "xtype": "contactform",
-                "autoCreate": true,
-                "designer|userClassName": "contactform"
+                "xtype": "contactform"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "6a75e451-ac6f-4d7b-bbd6-4189dcdd488c"
         },
         {
-            "id": "ExtBox1-ext-gen26386",
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -62,17 +54,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "contactlist",
+                "autoCreate": true,
                 "ref": "contactlist",
                 "selector": "contactlist",
-                "xtype": "contactlist",
-                "autoCreate": true,
-                "designer|userClassName": "contactlist"
+                "xtype": "contactlist"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "b0dbf22d-ae16-4210-80ea-da98cf28a963"
         },
         {
-            "id": "ExtBox1-ext-gen32770",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -80,18 +70,23 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onAddContactBtnTap",
                 "fn": "onAddContactBtnTap",
-                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nform.setRecord(null);\nform.reset();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);",
+                "implHandler": [
+                    "var referrer = Ext.Viewport.getActiveItem();",
+                    "var form = this.getContactform();",
+                    "form.setRecord(null);",
+                    "form.reset();",
+                    "form.referrer = referrer;",
+                    "Ext.Viewport.setActiveItem(form);"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
-                "designer|controlQuery": "button#addContactBtn",
-                "designer|userClassName": "onAddContactBtnTap"
+                "designer|controlQuery": "button#addContactBtn"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "3efca5c9-ebe0-4e82-b509-e3c44f3d01b8"
         },
         {
-            "id": "ExtBox1-ext-gen34079",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -99,18 +94,38 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onSaveContactBtnTap",
                 "fn": "onSaveContactBtnTap",
-                "implHandler": "var form = this.getContactform();\nvar errors = form.getValidationErrors();\n\nif (errors.length) {\n    Ext.Msg.alert('Error', errors.join('<br/>'));\n} else {\n    var values = form.getValues();\n    var record = form.getRecord();\n    if (record) {\n        record.setData(values);\n        record.commit();\n        if (form.referrer.setRecord) {\n            form.referrer.setRecord(record);\n        }\n    } else {\n        Ext.StoreManager.lookup('ContactStore').add(values);\n    }\n    Ext.Viewport.setActiveItem(form.referrer);\n    delete form.referrer;\n}\n",
+                "implHandler": [
+                    "var form = this.getContactform();",
+                    "var errors = form.getValidationErrors();",
+                    "",
+                    "if (errors.length) {",
+                    "    Ext.Msg.alert('Error', errors.join('<br/>'));",
+                    "} else {",
+                    "    var values = form.getValues();",
+                    "    var record = form.getRecord();",
+                    "    if (record) {",
+                    "        record.setData(values);",
+                    "        record.commit();",
+                    "        if (form.referrer.setRecord) {",
+                    "            form.referrer.setRecord(record);",
+                    "        }",
+                    "    } else {",
+                    "        Ext.StoreManager.lookup('ContactStore').add(values);",
+                    "    }",
+                    "    Ext.Viewport.setActiveItem(form.referrer);",
+                    "    delete form.referrer;",
+                    "}",
+                    ""
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
-                "designer|controlQuery": "button#saveContactBtn",
-                "designer|userClassName": "onSaveContactBtnTap"
+                "designer|controlQuery": "button#saveContactBtn"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "d444927a-59ad-452a-8405-2bc07da520bc"
         },
         {
-            "id": "ExtBox1-ext-gen43963",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -118,18 +133,23 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onEditContactBtnTap",
                 "fn": "onEditContactBtnTap",
-                "implHandler": "var referrer = Ext.Viewport.getActiveItem();\nvar form = this.getContactform();\nvar info = this.getContactinfo();\nform.referrer = referrer;\nExt.Viewport.setActiveItem(form);\nform.setRecord(info.getRecord());",
+                "implHandler": [
+                    "var referrer = Ext.Viewport.getActiveItem();",
+                    "var form = this.getContactform();",
+                    "var info = this.getContactinfo();",
+                    "form.referrer = referrer;",
+                    "Ext.Viewport.setActiveItem(form);",
+                    "form.setRecord(info.getRecord());"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
-                "designer|controlQuery": "button#editContactBtn",
-                "designer|userClassName": "onEditContactBtnTap"
+                "designer|controlQuery": "button#editContactBtn"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "2baf8996-4664-453c-88bf-afcc6c0b911b"
         },
         {
-            "id": "ExtBox1-ext-gen47869",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -137,18 +157,21 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onCancelBtnTap",
                 "fn": "onCancelBtnTap",
-                "implHandler": "var form = this.getContactform();\nExt.Viewport.setActiveItem(form.referrer);\ndelete form.referrer;\n",
+                "implHandler": [
+                    "var form = this.getContactform();",
+                    "Ext.Viewport.setActiveItem(form.referrer);",
+                    "delete form.referrer;",
+                    ""
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
-                "designer|controlQuery": "button#cancelBtn",
-                "designer|userClassName": "onCancelBtnTap"
+                "designer|controlQuery": "button#cancelBtn"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "fa65c1a2-487e-47c4-aed7-415ea63318c7"
         },
         {
-            "id": "ExtBox1-ext-gen49089",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -156,18 +179,21 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onContactItemTap",
                 "fn": "onContactItemTap",
-                "implHandler": "var info = this.getContactinfo();\ninfo.setRecord(record);\nExt.Viewport.setActiveItem(info);\n",
+                "implHandler": [
+                    "var info = this.getContactinfo();",
+                    "info.setRecord(record);",
+                    "Ext.Viewport.setActiveItem(info);",
+                    ""
+                ],
                 "name": "itemtap",
                 "designer|targetType": "Ext.dataview.DataView",
-                "designer|controlQuery": "dataview",
-                "designer|userClassName": "onContactItemTap"
+                "designer|controlQuery": "dataview"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "9019be36-ff75-4ffc-912b-e3ff75e854d6"
         },
         {
-            "id": "ExtBox1-ext-gen52208",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -175,18 +201,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onInfoBackBtnTap",
                 "fn": "onInfoBackBtnTap",
-                "implHandler": "Ext.Viewport.setActiveItem(0);",
+                "implHandler": [
+                    "Ext.Viewport.setActiveItem(0);"
+                ],
                 "name": "tap",
                 "designer|targetType": "Ext.Button",
-                "designer|controlQuery": "button#infoBackBtn",
-                "designer|userClassName": "onInfoBackBtnTap"
+                "designer|controlQuery": "button#infoBackBtn"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "f4378b83-8210-4128-8355-4a6903119441"
         },
         {
-            "id": "ExtBox1-ext-gen70386",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -194,18 +220,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onFavoriteViewActivate",
                 "fn": "onFavoriteViewActivate",
-                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.filter('isFavorite', true);",
+                "implHandler": [
+                    "var ds = Ext.StoreManager.lookup('ContactStore');",
+                    "ds.filter('isFavorite', true);"
+                ],
                 "name": "activate",
                 "designer|targetType": "Ext.dataview.DataView",
-                "designer|controlQuery": "favoriteview",
-                "designer|userClassName": "onFavoriteViewActivate"
+                "designer|controlQuery": "favoriteview"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "a03bdc4d-ba07-46cf-a75a-a814494edc0e"
         },
         {
-            "id": "ExtBox1-ext-gen71213",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -213,18 +240,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onListActivate",
                 "fn": "onListActivate",
-                "implHandler": "var ds = Ext.StoreManager.lookup('ContactStore');\nds.clearFilter();",
+                "implHandler": [
+                    "var ds = Ext.StoreManager.lookup('ContactStore');",
+                    "ds.clearFilter();"
+                ],
                 "name": "activate",
                 "designer|targetType": "Ext.dataview.List",
-                "designer|controlQuery": "list",
-                "designer|userClassName": "onListActivate"
+                "designer|controlQuery": "list"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e9c9c5a8-4919-40d1-98ba-d7b517a585d6"
         },
         {
-            "id": "ExtBox1-ext-gen8904",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -232,15 +260,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "onContactPickerChange",
                 "fn": "onContactPickerChange",
-                "implHandler": "var currentForm = Ext.Viewport.getActiveItem();\nvar record = currentForm.getRecord();\nif (record) {\n    //    Ext.Msg.alert('pic', 'setting pic to ' + value);\n    record.set('picture', value);\n    record.commit();\n    currentForm.setRecord(record);\n}\n",
+                "implHandler": [
+                    "var currentForm = Ext.Viewport.getActiveItem();",
+                    "var record = currentForm.getRecord();",
+                    "if (record) {",
+                    "    //    Ext.Msg.alert('pic', 'setting pic to ' + value);",
+                    "    record.set('picture', value);",
+                    "    record.commit();",
+                    "    currentForm.setRecord(record);",
+                    "}",
+                    ""
+                ],
                 "name": "change",
                 "designer|targetType": "Ext.picker.Picker",
-                "designer|controlQuery": "contactpic",
-                "designer|userClassName": "onContactPickerChange"
+                "designer|controlQuery": "contactpic"
             },
-            "customConfigs": [],
-            "expanded": true
+            "designerId": "e4509ca3-bc1e-47aa-99d1-23415c289449"
         }
     ]
 }
