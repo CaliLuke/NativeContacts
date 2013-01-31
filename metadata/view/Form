@@ -1,48 +1,47 @@
 {
-    "type": "formpanel",
+    "type": "Ext.form.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Form",
-        "designer|userAlias": "contactform",
         "id": null,
         "itemId": "formCancelBtn",
         "padding": "10px",
+        "designer|userClassName": "Form",
+        "designer|userAlias": "contactform",
         "scrollable": [
             "true"
         ]
     },
-    "id": "ExtBox1-ext-gen27267",
     "designerId": "7187cc37-7c2e-4f8a-a763-ba7d3f34a79c",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar",
-                "docked": "top"
+                "docked": "top",
+                "designer|userClassName": "MyToolbar"
             },
             "designerId": "32288607-5579-4c95-b4ee-e5d4fc422625",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton",
                         "id": "starContact",
                         "itemId": "cancelBtn",
                         "ui": "decline",
+                        "designer|userClassName": "MyButton",
                         "iconCls": null,
                         "iconMask": true,
                         "text": "Cancel"
@@ -50,7 +49,7 @@
                     "designerId": "2c109d9b-cbc1-43c2-ad39-e4949b1298f5"
                 },
                 {
-                    "type": "spacer",
+                    "type": "Ext.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -62,17 +61,17 @@
                     "designerId": "e4ca9257-17fc-45c5-a763-d62e311a539b"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton",
                         "id": null,
                         "itemId": "saveContactBtn",
                         "ui": "action",
+                        "designer|userClassName": "MyButton",
                         "iconCls": "",
                         "iconMask": true,
                         "text": "Save"
@@ -89,19 +88,19 @@
             },
             "codeClass": null,
             "designerId": "704088da-a51c-4815-b2e0-d9b9b472694d",
-            "masterInstanceId": "ExtBox1-ext-gen15697"
+            "masterInstanceId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField",
                 "itemId": "firstName",
                 "margin": "10px 0 0 0",
+                "designer|userClassName": "MyTextField",
                 "label": "First Name",
                 "labelAlign": "top",
                 "name": "firstName",
@@ -111,15 +110,15 @@
             "designerId": "9e8fecd4-dbb2-4c28-92da-0c97bf71a356"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "itemId": "lastName",
+                "designer|userClassName": "MyTextField1",
                 "label": "Last Name",
                 "labelAlign": "top",
                 "name": "lastName",
@@ -128,15 +127,15 @@
             "designerId": "dbc98826-aaf1-4c8a-9f3a-8b21d8b8b629"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "itemId": "phoneNumber",
+                "designer|userClassName": "MyTextField1",
                 "label": "Phone Number",
                 "labelAlign": "top",
                 "name": "phoneNumber",
@@ -146,15 +145,15 @@
             "designerId": "b13c1c6b-53d9-4cef-bc83-eda716409342"
         },
         {
-            "type": "emailfield",
+            "type": "Ext.field.Email",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyEmailField",
                 "itemId": "emailAddress",
+                "designer|userClassName": "MyEmailField",
                 "label": "Email Address",
                 "labelAlign": "top",
                 "name": "emailAddress",
@@ -164,15 +163,15 @@
             "designerId": "1a2892c3-bd99-46ae-b464-762d633f52fb"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "itemId": "address",
+                "designer|userClassName": "MyTextField1",
                 "label": "Address",
                 "labelAlign": "top",
                 "name": "address",
@@ -181,15 +180,15 @@
             "designerId": "fd17f2d4-3915-4475-85e5-dcf44231b4fb"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "itemId": "city",
+                "designer|userClassName": "MyTextField1",
                 "label": "City",
                 "labelAlign": "top",
                 "name": "city",
@@ -198,16 +197,16 @@
             "designerId": "18809ca3-c0f6-48e3-ab2c-97c4698dd74b"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "id": "state",
                 "itemId": "address",
+                "designer|userClassName": "MyTextField1",
                 "label": "State",
                 "labelAlign": "top",
                 "name": "city",
@@ -216,16 +215,16 @@
             "designerId": "d21db6c3-5c5a-431b-9430-ce63b4e9d179"
         },
         {
-            "type": "numberfield",
+            "type": "Ext.field.Number",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyNumberField",
                 "id": "zipcode",
                 "itemId": "address",
+                "designer|userClassName": "MyNumberField",
                 "label": "Zipcode",
                 "labelAlign": "top",
                 "name": "zipcode",

@@ -1,5 +1,5 @@
 {
-    "type": "list",
+    "type": "Ext.dataview.List",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,15 +8,14 @@
     "userConfig": {
         "designer|userClassName": "List",
         "designer|userAlias": "contactlist",
+        "disableSelection": true,
         "emptyText": "No Contacts",
-        "store": "ContactStore",
-        "disableSelection": true
+        "store": "ContactStore"
     },
-    "id": "ExtBox1-ext-gen2950",
     "designerId": "5b610c64-3053-4d2f-8bfb-77077b9b2217",
     "cn": [
         {
-            "type": "listindexbar",
+            "type": "Ext.dataview.IndexBar",
             "reference": {
                 "name": "indexBar",
                 "type": "object"
@@ -29,7 +28,7 @@
             "designerId": "62e06e22-c1ef-4c62-a31f-308b64178caa"
         },
         {
-            "type": "template",
+            "type": "Ext.XTemplate",
             "reference": {
                 "name": "itemTpl",
                 "type": "object"

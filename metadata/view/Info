@@ -1,49 +1,48 @@
 {
-    "type": "formpanel",
+    "type": "Ext.form.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Info",
-        "designer|userAlias": "contactinfo",
         "id": null,
-        "padding": "10px"
+        "padding": "10px",
+        "designer|userClassName": "Info",
+        "designer|userAlias": "contactinfo"
     },
-    "id": "ExtBox1-ext-gen6063",
     "designerId": "266d5780-ee4a-4dca-a156-841cf77894ee",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar",
-                "docked": "top"
+                "docked": "top",
+                "designer|userClassName": "MyToolbar"
             },
             "designerId": "b4f1c33c-db01-4a13-9131-db478a8a0b21",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton5",
                         "itemId": "infoBackBtn",
                         "ui": "back",
+                        "designer|userClassName": "MyButton5",
                         "text": "Back"
                     },
                     "designerId": "59364094-80aa-40dc-81a9-6b24a0cf0d09"
                 },
                 {
-                    "type": "component",
+                    "type": "Ext.Component",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -51,30 +50,29 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "designer|userClassName": "MyComponent",
                         "cls": [
                             "contact-name"
                         ],
                         "height": null,
                         "html": "First Name Last Name",
                         "id": null,
-                        "itemId": "nameTxt"
+                        "itemId": "nameTxt",
+                        "designer|userClassName": "MyComponent"
                     },
                     "designerId": "a8e6751f-5a9a-4f5c-946c-43e2a9282518"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton",
-                        "cls": null,
                         "id": null,
                         "itemId": "favoriteBtn",
                         "ui": null,
+                        "designer|userClassName": "MyButton",
                         "iconCls": "favorites",
                         "iconMask": true,
                         "text": ""
@@ -105,16 +103,16 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton",
                         "id": "",
                         "itemId": "editContactBtn",
+                        "designer|userClassName": "MyButton",
                         "iconCls": "compose",
                         "iconMask": true,
                         "text": ""
@@ -131,19 +129,19 @@
             },
             "codeClass": null,
             "designerId": "11b52498-1b3f-4cbb-9bda-c4460a0770c8",
-            "masterInstanceId": "ExtBox1-ext-gen15697"
+            "masterInstanceId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "disabled": true,
                 "itemId": "phoneNumber",
+                "designer|userClassName": "MyTextField1",
                 "clearIcon": false,
                 "label": "Phone Number",
                 "labelAlign": "top",
@@ -153,16 +151,16 @@
             "designerId": "149d2490-d573-478d-94a7-884d2ff9b1e8"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "disabled": true,
                 "itemId": "emailAddress",
+                "designer|userClassName": "MyTextField1",
                 "clearIcon": false,
                 "label": "Email Address",
                 "labelAlign": "top",
@@ -173,17 +171,17 @@
             "designerId": "e451d8e5-5316-4268-a50c-436141b4e8a6"
         },
         {
-            "type": "textfield",
+            "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyTextField1",
                 "disabled": true,
                 "id": "address",
                 "itemId": null,
+                "designer|userClassName": "MyTextField1",
                 "clearIcon": false,
                 "label": "Address",
                 "labelAlign": "top",

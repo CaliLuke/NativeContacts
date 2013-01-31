@@ -1,17 +1,16 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Contacts",
         "stores": [
             "ContactStore"
-        ]
+        ],
+        "designer|userClassName": "Contacts"
     },
-    "id": "ExtBox1-ext-gen24846",
     "designerId": "12f4e105-fe10-4110-a7c7-4be456e0092e",
     "cn": [
         {

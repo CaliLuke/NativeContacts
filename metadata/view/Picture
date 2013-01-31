@@ -1,5 +1,5 @@
 {
-    "type": "container",
+    "type": "Ext.Container",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,20 +8,19 @@
     "userConfig": {
         "overflow": "hidden",
         "container|align": "center",
-        "designer|userClassName": "Picture",
-        "designer|userAlias": "contactpic",
         "height": 120,
         "html": null,
         "id": null,
         "minHeight": 100,
         "style": "overflow: hidden",
         "ui": "",
+        "designer|userClassName": "Picture",
+        "designer|userAlias": "contactpic",
         "layout": "vbox",
         "masked": null,
         "modal": null,
         "scrollable": null
     },
-    "id": "ExtBox1-ext-gen15697",
     "designerId": "b037ea3a-5bcd-4f85-930a-abaa1bdc4dcd",
     "customConfigs": [
         {
@@ -32,34 +31,34 @@
     ],
     "cn": [
         {
-            "type": "component",
+            "type": "Ext.Component",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyComponent2",
                 "html": "",
-                "style": null
+                "style": null,
+                "designer|userClassName": "MyComponent2"
             },
             "designerId": "4b25a1d2-93b2-49cd-b330-0e99c3ee3b1c"
         },
         {
-            "type": "button",
+            "type": "Ext.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton1",
                 "bottom": 5,
                 "docked": null,
                 "id": null,
                 "itemId": "mybutton",
                 "right": 5,
                 "width": null,
+                "designer|userClassName": "MyButton1",
                 "iconCls": "add",
                 "iconMask": true,
                 "text": null
@@ -97,7 +96,7 @@
             ]
         },
         {
-            "type": "template",
+            "type": "Ext.XTemplate",
             "reference": {
                 "name": "tpl",
                 "type": "object"

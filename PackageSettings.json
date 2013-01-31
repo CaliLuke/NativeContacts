@@ -27,7 +27,7 @@
      * 
      * This is the integer version code of your application, or you can refer to it as a build number. Used only for Android builds.
      */
-    "versionCode": 1,
+    "versionCode": "1",
 
     /**
      * @cfg {Object} icon

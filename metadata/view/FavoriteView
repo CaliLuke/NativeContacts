@@ -1,5 +1,5 @@
 {
-    "type": "dataview",
+    "type": "Ext.dataview.DataView",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,20 +8,16 @@
     "userConfig": {
         "designer|userClassName": "FavoriteView",
         "designer|userAlias": "favoriteview",
-        "scrollable": [
-            "vertical"
-        ],
         "emptyText": "No Favorite Contacts",
         "inline": [
             "true"
         ],
         "store": "ContactStore"
     },
-    "id": "ExtBox1-ext-gen4991",
     "designerId": "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b",
     "cn": [
         {
-            "type": "template",
+            "type": "Ext.XTemplate",
             "reference": {
                 "name": "itemTpl",
                 "type": "object"

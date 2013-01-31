@@ -1,22 +1,21 @@
 {
-    "type": "store",
+    "type": "Ext.data.Store",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ContactStore",
         "autoLoad": true,
         "autoSync": true,
         "model": "Contact",
-        "storeId": "ContactStore"
+        "storeId": "ContactStore",
+        "designer|userClassName": "ContactStore"
     },
-    "id": "ExtBox1-ext-gen19686",
     "designerId": "8173b689-b7f9-4661-9bb0-6cba367d3d80",
     "cn": [
         {
-            "type": "localstorageproxy",
+            "type": "Ext.data.proxy.LocalStorage",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -28,7 +27,7 @@
             "designerId": "dbc31c38-13b6-41fa-bf8f-6b29f6b2a358"
         },
         {
-            "type": "grouper",
+            "type": "Ext.util.Grouper",
             "reference": {
                 "name": "grouper",
                 "type": "object"
@@ -62,15 +61,15 @@
             ]
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter",
-                "property": "firstName"
+                "property": "firstName",
+                "designer|userClassName": "MySorter"
             },
             "designerId": "5f089979-7818-4125-bcde-c8f7d886c5ba"
         }

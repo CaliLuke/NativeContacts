@@ -1,14 +1,11 @@
 {
-    "type": "application",
+    "type": "Ext.app.Application",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "requires": [
-            "Ext.device.Camera"
-        ],
         "models": [
             "Contact"
         ],
@@ -23,12 +20,14 @@
             "List",
             "FavoriteView"
         ],
-        "name": "Contact",
+        "requires": [
+            "Ext.device.Camera"
+        ],
         "controllers": [
             "Contacts"
-        ]
+        ],
+        "name": "Contact"
     },
-    "id": "ExtBox1-ext-gen2029",
     "designerId": "application",
     "cn": [
         {
@@ -85,18 +84,17 @@
             "designerId": "ba1fcbb2-e63e-445e-a67c-ec117224b08e"
         },
         {
-            "type": "loader",
+            "type": "Ext.Loader",
             "reference": {
                 "name": "loader",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "Loader",
-                "enabled": true,
                 "paths": [
                     "{\"Ext.device\":\"device/\"}"
-                ]
+                ],
+                "designer|userClassName": "Loader"
             },
             "designerId": "cf9aa7ff-9188-40b1-a092-5c591cea8297"
         }

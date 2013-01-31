@@ -1,5 +1,5 @@
 {
-    "type": "tabpanel",
+    "type": "Ext.tab.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,11 +9,10 @@
         "designer|userClassName": "Main",
         "designer|initialView": true
     },
-    "id": "ExtBox1-ext-gen2077",
     "designerId": "ab0ebc18-fc5b-43b1-8958-7395bd191769",
     "cn": [
         {
-            "type": "tabbar",
+            "type": "Ext.tab.Bar",
             "reference": {
                 "name": "tabBar",
                 "type": "object"
@@ -21,9 +20,9 @@
             "codeClass": null,
             "userConfig": {
                 "container|pack": "center",
-                "designer|userClassName": "MyTabBar",
                 "border": "",
-                "docked": "top"
+                "docked": "top",
+                "designer|userClassName": "MyTabBar"
             },
             "designerId": "8952dde9-dac2-4b88-9838-9ef8f3fe34b8"
         },
@@ -38,7 +37,7 @@
                 "title": "Contacts"
             },
             "designerId": "84624564-a015-48ea-8088-c56c025a60d5",
-            "masterInstanceId": "ExtBox1-ext-gen2950"
+            "masterInstanceId": "5b610c64-3053-4d2f-8bfb-77077b9b2217"
         },
         {
             "type": "linkedinstance",
@@ -51,33 +50,35 @@
                 "title": "Favorites"
             },
             "designerId": "2ce4f1c3-5577-42a8-b2ac-501455c9e8f1",
-            "masterInstanceId": "ExtBox1-ext-gen4991"
+            "masterInstanceId": "e83d8bd0-aa8b-4b79-bf87-9a8797bca19b"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyToolbar2",
-                "docked": "bottom"
+                "docked": "bottom",
+                "designer|userClassName": "MyToolbar2"
             },
             "designerId": "469e1f53-0b7f-427f-b138-42e45c6f7d8b",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton6",
-                        "cls": "square",
+                        "cls": [
+                            "square"
+                        ],
                         "itemId": "addContactBtn",
                         "ui": "action",
+                        "designer|userClassName": "MyButton6",
                         "iconCls": "add",
                         "iconMask": true,
                         "text": "Add Contact"
